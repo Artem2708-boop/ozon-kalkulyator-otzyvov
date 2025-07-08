@@ -42,7 +42,7 @@ const Index = () => {
                 <Icon name="ShoppingCart" size={20} className="text-white" />
               </div>
               <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent">
-                OZON ЗАРТИН
+                CUPOZON
               </span>
             </div>
             <div className="hidden md:flex items-center space-x-8">
