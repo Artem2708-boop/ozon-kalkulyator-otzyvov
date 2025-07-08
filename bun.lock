@@ -37,6 +37,7 @@
         "clsx": "^2.1.1",
         "cmdk": "^1.0.0",
         "date-fns": "^3.6.0",
+        "emailjs-com": "^3.2.0",
         "embla-carousel-react": "^8.3.0",
         "input-otp": "^1.2.4",
         "lucide-react": "^0.462.0",
@@ -581,6 +582,8 @@
     "eastasianwidth": ["eastasianwidth@0.2.0", "", {}, "sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA=="],
 
     "electron-to-chromium": ["electron-to-chromium@1.5.180", "", {}, "sha512-ED+GEyEh3kYMwt2faNmgMB0b8O5qtATGgR4RmRsIp4T6p7B8vdMbIedYndnvZfsaXvSzegtpfqRMDNCjjiSduA=="],
+
+    "emailjs-com": ["emailjs-com@3.2.0", "", {}, "sha512-Prbz3E1usiAwGjMNYRv6EsJ5c373cX7/AGnZQwOfrpNJrygQJ15+E9OOq4pU8yC977Z5xMetRfc3WmDX6RcjAA=="],
 
     "embla-carousel": ["embla-carousel@8.6.0", "", {}, "sha512-SjWyZBHJPbqxHOzckOfo8lHisEaJWmwd23XppYFYVh10bU66/Pn5tkVkbkCMZVdbUE5eTCI2nD8OyIP4Z+uwkA=="],
 

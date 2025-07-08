@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -11,6 +11,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Icon from "@/components/ui/icon";
 import { Badge } from "@/components/ui/badge";
+import { sendEmail, initEmailJS } from "@/utils/emailService";
 
 const Index = () => {
   const [totalReviews, setTotalReviews] = useState("");
@@ -31,6 +32,11 @@ const Index = () => {
     comment: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Инициализация EmailJS при загрузке компонента
+  useEffect(() => {
+    initEmailJS();
+  }, []);
 
   const calculateReviews = () => {
     const total = parseInt(totalReviews);
@@ -79,23 +85,36 @@ const Index = () => {
     setIsSubmitting(true);
 
     try {
-      const message = `Добрый день!\nХочу заказать у вас отзывы, я пришел к вам с сайта)\nХочу заказать ${formData.reviewCount} отзывов`;
+      // Отправляем email
+      const emailSent = await sendEmail(formData);
 
-      // Открываем Telegram с готовым сообщением
-      const telegramUrl = `https://t.me/cupozon_mp?text=${encodeURIComponent(message)}`;
-      window.open(telegramUrl, "_blank");
+      if (emailSent) {
+        // Если email отправлен успешно, также открываем Telegram
+        const message = `Добрый день!\nХочу заказать у вас отзывы, я пришел к вам с сайта)\nХочу заказать ${formData.reviewCount} отзывов`;
+        const telegramUrl = `https://t.me/cupozon_mp?text=${encodeURIComponent(message)}`;
+        window.open(telegramUrl, "_blank");
 
-      // Очищаем форму
-      setFormData({
-        fullName: "",
-        contact: "",
-        reviewCount: "",
-        comment: "",
-      });
+        // Очищаем форму
+        setFormData({
+          fullName: "",
+          contact: "",
+          reviewCount: "",
+          comment: "",
+        });
 
-      alert(
-        "Заявка подготовлена! Отправьте сообщение в Telegram для завершения.",
-      );
+        alert(
+          "Заявка отправлена на email и подготовлена для Telegram! Отправьте сообщение в Telegram для завершения.",
+        );
+      } else {
+        // Если email не отправился, все равно открываем Telegram
+        const message = `Добрый день!\nХочу заказать у вас отзывы, я пришел к вам с сайта)\nХочу заказать ${formData.reviewCount} отзывов`;
+        const telegramUrl = `https://t.me/cupozon_mp?text=${encodeURIComponent(message)}`;
+        window.open(telegramUrl, "_blank");
+
+        alert(
+          "Заявка подготовлена для Telegram! Отправьте сообщение в Telegram для завершения.",
+        );
+      }
     } catch (error) {
       alert("Произошла ошибка. Попробуйте снова.");
     } finally {
