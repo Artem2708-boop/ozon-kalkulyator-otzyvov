@@ -392,6 +392,21 @@ const Index = () => {
                       </div>
                     ))}
                   </div>
+
+                  <div className="text-center mt-6">
+                    <Button
+                      size="lg"
+                      className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 font-semibold"
+                      onClick={() =>
+                        document
+                          .getElementById("contact-form")
+                          ?.scrollIntoView({ behavior: "smooth" })
+                      }
+                    >
+                      <Icon name="ShoppingCart" size={20} className="mr-2" />
+                      Заказать отзывы
+                    </Button>
+                  </div>
                 </div>
               )}
             </CardContent>
