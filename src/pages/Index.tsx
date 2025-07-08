@@ -95,6 +95,7 @@ const Index = () => {
               <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
                 Увеличьте рейтинг товаров на
                 <span className="bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent">
+                  {" "}
                   Озоне
                 </span>
               </h1>
@@ -137,7 +138,7 @@ const Index = () => {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             <div className="animate-fade-in">
               <div className="text-3xl lg:text-4xl font-bold text-blue-600 mb-2">
-                5000+
+                50000+
               </div>
               <div className="text-gray-600">Выполненных заказов</div>
             </div>
@@ -457,7 +458,7 @@ const Index = () => {
                 className="mx-auto text-blue-100 mb-2"
               />
               <div className="text-white font-semibold">Email</div>
-              <div className="text-blue-100">info@ozonzartin.ru</div>
+              <div className="text-blue-100">info@cupozon.ru</div>
             </div>
             <div>
               <Icon
@@ -490,7 +491,7 @@ const Index = () => {
                 <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-green-500 rounded-lg flex items-center justify-center">
                   <Icon name="ShoppingCart" size={20} className="text-white" />
                 </div>
-                <span className="text-xl font-bold">OZON ЗАРТИН</span>
+                <span className="text-xl font-bold">CUPOZON</span>
               </div>
               <p className="text-gray-400 mb-4">
                 Профессиональные услуги продвижения товаров на маркетплейсе
@@ -513,7 +514,7 @@ const Index = () => {
               <ul className="space-y-2 text-gray-400">
                 <li>info@ozonzartin.ru</li>
                 <li>+7 (999) 123-45-67</li>
-                <li>Telegram: @ozonzartin</li>
+                <li>Telegram: @cupozon_mp</li>
               </ul>
             </div>
           </div>
