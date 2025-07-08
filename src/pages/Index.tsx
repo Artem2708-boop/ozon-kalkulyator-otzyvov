@@ -32,27 +32,29 @@ const Index = () => {
     const r1 = parseInt(reviews1) || 0;
 
     if (total && r5 + r4 + r3 + r2 + r1 === total) {
+      // Текущий рейтинг: (5*количество_5звезд + 4*количество_4звезд + ... + 1*количество_1звезда) / общее_количество
       const currentRating =
         (5 * r5 + 4 * r4 + 3 * r3 + 2 * r2 + 1 * r1) / total;
       const calculatedResults = [];
 
-      // Расчет для рейтингов от 4.5 до 5.0
+      // Расчет для рейтингов от 4.5 до 5.0 с шагом 0.1
       for (let targetRating = 4.5; targetRating <= 5.0; targetRating += 0.1) {
-        const needed = Math.ceil(
-          (targetRating *
-            (total +
-              Math.ceil(
-                (targetRating * total - currentRating * total) /
-                  (5 - targetRating),
-              )) -
-            currentRating * total) /
-            (5 - targetRating),
-        );
-        if (needed > 0 && targetRating > currentRating) {
-          calculatedResults.push({
-            rating: Math.round(targetRating * 10) / 10,
-            needed: needed,
-          });
+        if (targetRating > currentRating) {
+          // Формула: N = (целевой_рейтинг * (текущее_количество + N) - текущая_сумма_баллов) / 5
+          // где N - количество нужных 5-звездочных отзывов
+          // Преобразуем: N = (целевой_рейтинг * текущее_количество - текущая_сумма_баллов) / (5 - целевой_рейтинг)
+
+          const currentTotalScore = 5 * r5 + 4 * r4 + 3 * r3 + 2 * r2 + 1 * r1;
+          const needed = Math.ceil(
+            (targetRating * total - currentTotalScore) / (5 - targetRating),
+          );
+
+          if (needed > 0) {
+            calculatedResults.push({
+              rating: Math.round(targetRating * 10) / 10,
+              needed: needed,
+            });
+          }
         }
       }
 
