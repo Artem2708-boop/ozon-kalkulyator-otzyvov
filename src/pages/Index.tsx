@@ -79,7 +79,7 @@ const Index = () => {
     setIsSubmitting(true);
 
     try {
-      const message = `🔔 Новая заявка с сайта CUPOZON\n\n👤 ФИО: ${formData.fullName}\n📞 Контакт: ${formData.contact}\n⭐ Количество отзывов: ${formData.reviewCount}\n💬 Комментарий: ${formData.comment || "Не указан"}`;
+      const message = `Добрый день!\nХочу заказать у вас отзывы, я пришел к вам с сайта)\nХочу заказать ${formData.reviewCount} отзывов`;
 
       // Открываем Telegram с готовым сообщением
       const telegramUrl = `https://t.me/cupozon_mp?text=${encodeURIComponent(message)}`;
