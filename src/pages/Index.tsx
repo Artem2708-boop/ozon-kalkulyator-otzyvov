@@ -40,16 +40,19 @@ const Index = () => {
       // Расчет для рейтингов от 4.5 до 5.0 с шагом 0.1
       for (let targetRating = 4.5; targetRating <= 5.0; targetRating += 0.1) {
         if (targetRating > currentRating) {
-          // Формула: N = (целевой_рейтинг * (текущее_количество + N) - текущая_сумма_баллов) / 5
-          // где N - количество нужных 5-звездочных отзывов
-          // Преобразуем: N = (целевой_рейтинг * текущее_количество - текущая_сумма_баллов) / (5 - целевой_рейтинг)
+          // Правильная формула для расчета необходимых 5-звездочных отзывов:
+          // Пусть N - количество нужных 5-звездочных отзывов
+          // Новый рейтинг = (текущая_сумма_баллов + 5*N) / (текущее_количество + N) = целевой_рейтинг
+          // Решаем уравнение: текущая_сумма_баллов + 5*N = целевой_рейтинг * (текущее_количество + N)
+          // N = (целевой_рейтинг * текущее_количество - текущая_сумма_баллов) / (5 - целевой_рейтинг)
 
           const currentTotalScore = 5 * r5 + 4 * r4 + 3 * r3 + 2 * r2 + 1 * r1;
-          const needed = Math.ceil(
-            (targetRating * total - currentTotalScore) / (5 - targetRating),
-          );
+          const numerator = targetRating * total - currentTotalScore;
+          const denominator = 5 - targetRating;
 
-          if (needed > 0) {
+          const needed = Math.ceil(numerator / denominator);
+
+          if (needed > 0 && denominator > 0) {
             calculatedResults.push({
               rating: Math.round(targetRating * 10) / 10,
               needed: needed,
