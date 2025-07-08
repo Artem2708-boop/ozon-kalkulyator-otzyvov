@@ -13,21 +13,50 @@ import Icon from "@/components/ui/icon";
 import { Badge } from "@/components/ui/badge";
 
 const Index = () => {
-  const [currentRating, setCurrentRating] = useState("");
-  const [targetRating, setTargetRating] = useState("");
   const [totalReviews, setTotalReviews] = useState("");
-  const [result, setResult] = useState<number | null>(null);
+  const [reviews5, setReviews5] = useState("");
+  const [reviews4, setReviews4] = useState("");
+  const [reviews3, setReviews3] = useState("");
+  const [reviews2, setReviews2] = useState("");
+  const [reviews1, setReviews1] = useState("");
+  const [results, setResults] = useState<{ rating: number; needed: number }[]>(
+    [],
+  );
 
   const calculateReviews = () => {
-    const current = parseFloat(currentRating);
-    const target = parseFloat(targetRating);
     const total = parseInt(totalReviews);
+    const r5 = parseInt(reviews5) || 0;
+    const r4 = parseInt(reviews4) || 0;
+    const r3 = parseInt(reviews3) || 0;
+    const r2 = parseInt(reviews2) || 0;
+    const r1 = parseInt(reviews1) || 0;
 
-    if (current && target && total && target > current) {
-      const needed = Math.ceil(
-        (target * total - current * total) / (5 - target),
-      );
-      setResult(needed);
+    if (total && r5 + r4 + r3 + r2 + r1 === total) {
+      const currentRating =
+        (5 * r5 + 4 * r4 + 3 * r3 + 2 * r2 + 1 * r1) / total;
+      const calculatedResults = [];
+
+      // Расчет для рейтингов от 4.5 до 5.0
+      for (let targetRating = 4.5; targetRating <= 5.0; targetRating += 0.1) {
+        const needed = Math.ceil(
+          (targetRating *
+            (total +
+              Math.ceil(
+                (targetRating * total - currentRating * total) /
+                  (5 - targetRating),
+              )) -
+            currentRating * total) /
+            (5 - targetRating),
+        );
+        if (needed > 0 && targetRating > currentRating) {
+          calculatedResults.push({
+            rating: Math.round(targetRating * 10) / 10,
+            needed: needed,
+          });
+        }
+      }
+
+      setResults(calculatedResults);
     }
   };
 
@@ -42,7 +71,7 @@ const Index = () => {
                 <Icon name="ShoppingCart" size={20} className="text-white" />
               </div>
               <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent">
-                CUPOZON
+                OZON ЗАРТИН
               </span>
             </div>
             <div className="hidden md:flex items-center space-x-8">
@@ -65,6 +94,12 @@ const Index = () => {
                 Калькулятор
               </a>
               <a
+                href="#pricing"
+                className="text-gray-700 hover:text-blue-600 transition-colors"
+              >
+                Прайс
+              </a>
+              <a
                 href="#reviews"
                 className="text-gray-700 hover:text-blue-600 transition-colors"
               >
@@ -77,7 +112,14 @@ const Index = () => {
                 Связаться
               </a>
             </div>
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+            <Button
+              className="bg-blue-600 hover:bg-blue-700 text-white"
+              onClick={() =>
+                document
+                  .getElementById("contact-form")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
               Начать работу
             </Button>
           </div>
@@ -95,7 +137,6 @@ const Index = () => {
               <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
                 Увеличьте рейтинг товаров на
                 <span className="bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent">
-                  {" "}
                   Озоне
                 </span>
               </h1>
@@ -107,6 +148,11 @@ const Index = () => {
                 <Button
                   size="lg"
                   className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4"
+                  onClick={() =>
+                    document
+                      .getElementById("calculator")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
                 >
                   <Icon name="Calculator" size={20} className="mr-2" />
                   Рассчитать отзывы
@@ -115,9 +161,26 @@ const Index = () => {
                   size="lg"
                   variant="outline"
                   className="border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-4"
+                  onClick={() =>
+                    document
+                      .getElementById("how-it-works")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
                 >
                   <Icon name="Play" size={20} className="mr-2" />
                   Как это работает
+                </Button>
+                <Button
+                  size="lg"
+                  className="bg-green-500 hover:bg-green-600 text-white px-8 py-4"
+                  onClick={() =>
+                    document
+                      .getElementById("contact-form")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
+                >
+                  <Icon name="ShoppingCart" size={20} className="mr-2" />
+                  Заказать отзывы
                 </Button>
               </div>
             </div>
@@ -138,7 +201,7 @@ const Index = () => {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             <div className="animate-fade-in">
               <div className="text-3xl lg:text-4xl font-bold text-blue-600 mb-2">
-                50000+
+                5000+
               </div>
               <div className="text-gray-600">Выполненных заказов</div>
             </div>
@@ -175,7 +238,8 @@ const Index = () => {
               Калькулятор отзывов
             </h2>
             <p className="text-xl text-gray-600">
-              Узнайте, сколько отзывов нужно для достижения желаемого рейтинга
+              Узнайте, сколько отзывов нужно для достижения рейтинга от 4.5
+              звезд
             </p>
           </div>
 
@@ -186,39 +250,16 @@ const Index = () => {
                 Расчет необходимых отзывов
               </CardTitle>
               <CardDescription>
-                Введите текущие данные вашего товара для расчета
+                Введите распределение ваших отзывов по звездам для точного
+                расчета
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
-              <div className="grid md:grid-cols-3 gap-4">
+              <div className="space-y-4">
                 <div className="space-y-2">
-                  <Label htmlFor="current-rating">Текущий рейтинг</Label>
-                  <Input
-                    id="current-rating"
-                    type="number"
-                    step="0.1"
-                    min="1"
-                    max="5"
-                    value={currentRating}
-                    onChange={(e) => setCurrentRating(e.target.value)}
-                    placeholder="4.2"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="target-rating">Желаемый рейтинг</Label>
-                  <Input
-                    id="target-rating"
-                    type="number"
-                    step="0.1"
-                    min="1"
-                    max="5"
-                    value={targetRating}
-                    onChange={(e) => setTargetRating(e.target.value)}
-                    placeholder="4.8"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="total-reviews">Количество отзывов</Label>
+                  <Label htmlFor="total-reviews">
+                    Общее количество отзывов
+                  </Label>
                   <Input
                     id="total-reviews"
                     type="number"
@@ -226,6 +267,89 @@ const Index = () => {
                     onChange={(e) => setTotalReviews(e.target.value)}
                     placeholder="150"
                   />
+                </div>
+
+                <div className="grid grid-cols-5 gap-3">
+                  <div className="space-y-2">
+                    <Label className="flex items-center gap-1">
+                      <Icon
+                        name="Star"
+                        size={16}
+                        className="text-yellow-400 fill-current"
+                      />
+                      5 звезд
+                    </Label>
+                    <Input
+                      type="number"
+                      value={reviews5}
+                      onChange={(e) => setReviews5(e.target.value)}
+                      placeholder="50"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label className="flex items-center gap-1">
+                      <Icon
+                        name="Star"
+                        size={16}
+                        className="text-yellow-400 fill-current"
+                      />
+                      4 звезды
+                    </Label>
+                    <Input
+                      type="number"
+                      value={reviews4}
+                      onChange={(e) => setReviews4(e.target.value)}
+                      placeholder="30"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label className="flex items-center gap-1">
+                      <Icon
+                        name="Star"
+                        size={16}
+                        className="text-yellow-400 fill-current"
+                      />
+                      3 звезды
+                    </Label>
+                    <Input
+                      type="number"
+                      value={reviews3}
+                      onChange={(e) => setReviews3(e.target.value)}
+                      placeholder="20"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label className="flex items-center gap-1">
+                      <Icon
+                        name="Star"
+                        size={16}
+                        className="text-yellow-400 fill-current"
+                      />
+                      2 звезды
+                    </Label>
+                    <Input
+                      type="number"
+                      value={reviews2}
+                      onChange={(e) => setReviews2(e.target.value)}
+                      placeholder="10"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label className="flex items-center gap-1">
+                      <Icon
+                        name="Star"
+                        size={16}
+                        className="text-yellow-400 fill-current"
+                      />
+                      1 звезда
+                    </Label>
+                    <Input
+                      type="number"
+                      value={reviews1}
+                      onChange={(e) => setReviews1(e.target.value)}
+                      placeholder="5"
+                    />
+                  </div>
                 </div>
               </div>
 
@@ -238,20 +362,136 @@ const Index = () => {
                 Рассчитать
               </Button>
 
-              {result !== null && (
-                <div className="mt-6 p-6 bg-gradient-to-r from-green-50 to-blue-50 rounded-lg border border-green-200 animate-scale-in">
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-green-600 mb-2">
-                      {result} отзывов
-                    </div>
-                    <p className="text-gray-700">
-                      Необходимо для достижения рейтинга {targetRating}
-                    </p>
+              {results.length > 0 && (
+                <div className="mt-6 space-y-4 animate-scale-in">
+                  <h3 className="text-lg font-semibold text-gray-900">
+                    Результаты расчета:
+                  </h3>
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {results.map((result, index) => (
+                      <div
+                        key={index}
+                        className="p-4 bg-gradient-to-r from-green-50 to-blue-50 rounded-lg border border-green-200"
+                      >
+                        <div className="text-center">
+                          <div className="text-xl font-bold text-green-600 mb-1">
+                            {result.needed} отзывов
+                          </div>
+                          <p className="text-sm text-gray-700">
+                            для рейтинга {result.rating.toFixed(1)} ⭐
+                          </p>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               )}
             </CardContent>
           </Card>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section
+        id="pricing"
+        className="py-20 bg-gradient-to-r from-gray-50 to-blue-50"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              Прайс на услуги
+            </h2>
+            <p className="text-xl text-gray-600">
+              Прозрачные цены на выкупы с отзывами
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-6">
+            <Card className="bg-white shadow-lg border-0 hover:shadow-xl transition-shadow">
+              <CardContent className="p-6">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-blue-600 mb-2">
+                    250 ₽
+                  </div>
+                  <div className="text-gray-600 mb-4">за выкуп + отзыв</div>
+                  <div className="text-sm text-gray-500">
+                    от 1 до 50 выкупов
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white shadow-lg border-0 hover:shadow-xl transition-shadow">
+              <CardContent className="p-6">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-green-600 mb-2">
+                    150 ₽
+                  </div>
+                  <div className="text-gray-600 mb-4">за выкуп + отзыв</div>
+                  <div className="text-sm text-gray-500">
+                    от 51 до 200 выкупов
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white shadow-lg border-0 hover:shadow-xl transition-shadow">
+              <CardContent className="p-6">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-blue-600 mb-2">
+                    130 ₽
+                  </div>
+                  <div className="text-gray-600 mb-4">за выкуп + отзыв</div>
+                  <div className="text-sm text-gray-500">
+                    от 200 до 300 выкупов
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white shadow-lg border-0 hover:shadow-xl transition-shadow">
+              <CardContent className="p-6">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-green-600 mb-2">
+                    100 ₽
+                  </div>
+                  <div className="text-gray-600 mb-4">за выкуп + отзыв</div>
+                  <div className="text-sm text-gray-500">
+                    от 300 до 500 выкупов
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white shadow-lg border-0 hover:shadow-xl transition-shadow">
+              <CardContent className="p-6">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-blue-600 mb-2">
+                    80 ₽
+                  </div>
+                  <div className="text-gray-600 mb-4">за выкуп + отзыв</div>
+                  <div className="text-sm text-gray-500">
+                    от 500 до 1000 выкупов
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-gradient-to-r from-green-500 to-blue-600 text-white shadow-lg border-0 hover:shadow-xl transition-shadow">
+              <CardContent className="p-6">
+                <div className="text-center">
+                  <div className="text-2xl font-bold mb-2">60 ₽</div>
+                  <div className="mb-4">за выкуп + отзыв</div>
+                  <div className="text-sm opacity-90">
+                    от 1000 до 10000 выкупов
+                  </div>
+                  <Badge className="mt-2 bg-white text-green-600">
+                    ЛУЧШАЯ ЦЕНА
+                  </Badge>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
@@ -419,6 +659,79 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Contact Form Section */}
+      <section
+        id="contact-form"
+        className="py-20 bg-gradient-to-r from-blue-50 to-green-50"
+      >
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              Обратная связь
+            </h2>
+            <p className="text-xl text-gray-600">
+              Оставьте заявку и мы свяжемся с вами для обсуждения деталей
+            </p>
+          </div>
+
+          <Card className="bg-white/80 backdrop-blur-sm shadow-xl border-0">
+            <CardContent className="p-8">
+              <form className="space-y-6">
+                <div className="space-y-2">
+                  <Label htmlFor="fullName">ФИО *</Label>
+                  <Input
+                    id="fullName"
+                    type="text"
+                    placeholder="Иванов Иван Иванович"
+                    required
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="contact">
+                    Аккаунт в Telegram или номер телефона *
+                  </Label>
+                  <Input
+                    id="contact"
+                    type="text"
+                    placeholder="@username или +7 (999) 123-45-67"
+                    required
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="reviewCount">Количество отзывов *</Label>
+                  <Input
+                    id="reviewCount"
+                    type="number"
+                    placeholder="100"
+                    required
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="comment">Комментарий (необязательно)</Label>
+                  <textarea
+                    id="comment"
+                    className="flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                    placeholder="Опишите дополнительную информацию о вашем заказе..."
+                  />
+                </div>
+
+                <Button
+                  type="submit"
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3"
+                  size="lg"
+                >
+                  <Icon name="Send" size={20} className="mr-2" />
+                  Отправить заявку
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section
         id="contact"
@@ -450,16 +763,7 @@ const Index = () => {
             </Button>
           </div>
 
-          <div className="mt-12 grid md:grid-cols-3 gap-8 text-center">
-            <div>
-              <Icon
-                name="Mail"
-                size={24}
-                className="mx-auto text-blue-100 mb-2"
-              />
-              <div className="text-white font-semibold">Email</div>
-              <div className="text-blue-100">info@cupozon.ru</div>
-            </div>
+          <div className="mt-12 grid md:grid-cols-2 gap-8 text-center">
             <div>
               <Icon
                 name="Phone"
@@ -491,7 +795,7 @@ const Index = () => {
                 <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-green-500 rounded-lg flex items-center justify-center">
                   <Icon name="ShoppingCart" size={20} className="text-white" />
                 </div>
-                <span className="text-xl font-bold">CUPOZON</span>
+                <span className="text-xl font-bold">OZON ЗАРТИН</span>
               </div>
               <p className="text-gray-400 mb-4">
                 Профессиональные услуги продвижения товаров на маркетплейсе
@@ -512,15 +816,14 @@ const Index = () => {
             <div>
               <h3 className="font-semibold mb-4">Контакты</h3>
               <ul className="space-y-2 text-gray-400">
-                <li>info@ozonzartin.ru</li>
                 <li>+7 (999) 123-45-67</li>
-                <li>Telegram: @cupozon_mp</li>
+                <li>Telegram: @ozonzartin</li>
               </ul>
             </div>
           </div>
 
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>© 2025 CUPOZON. Все права защищены.</p>
+            <p>&copy; 2024 OZON ЗАРТИН. Все права защищены.</p>
           </div>
         </div>
       </footer>
