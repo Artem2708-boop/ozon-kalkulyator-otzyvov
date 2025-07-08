@@ -90,7 +90,7 @@ const Index = () => {
 
       if (emailSent) {
         // Если email отправлен успешно, также открываем Telegram
-        const message = `Добрый день!\nХочу заказать у вас отзывы, я пришел к вам с сайта)\nХочу заказать ${formData.reviewCount} отзывов`;
+        const message = `Добрый день! Хочу заказать у вас отзывы, я пришел к вам с сайта) Хочу заказать ${formData.reviewCount} отзывов`;
         const telegramUrl = `https://t.me/cupozon_mp?text=${encodeURIComponent(message)}`;
         window.open(telegramUrl, "_blank");
 
@@ -107,7 +107,7 @@ const Index = () => {
         );
       } else {
         // Если email не отправился, все равно открываем Telegram
-        const message = `Добрый день!\nХочу заказать у вас отзывы, я пришел к вам с сайта)\nХочу заказать ${formData.reviewCount} отзывов`;
+        const message = `Добрый день! Хочу заказать у вас отзывы, я пришел к вам с сайта) Хочу заказать ${formData.reviewCount} отзывов`;
         const telegramUrl = `https://t.me/cupozon_mp?text=${encodeURIComponent(message)}`;
         window.open(telegramUrl, "_blank");
 
