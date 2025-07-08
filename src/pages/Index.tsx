@@ -23,6 +23,15 @@ const Index = () => {
     [],
   );
 
+  // Form states
+  const [formData, setFormData] = useState({
+    fullName: "",
+    contact: "",
+    reviewCount: "",
+    comment: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const calculateReviews = () => {
     const total = parseInt(totalReviews);
     const r5 = parseInt(reviews5) || 0;
@@ -62,6 +71,35 @@ const Index = () => {
       }
 
       setResults(calculatedResults);
+    }
+  };
+
+  const handleFormSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const message = `🔔 Новая заявка с сайта CUPOZON\n\n👤 ФИО: ${formData.fullName}\n📞 Контакт: ${formData.contact}\n⭐ Количество отзывов: ${formData.reviewCount}\n💬 Комментарий: ${formData.comment || "Не указан"}`;
+
+      // Открываем Telegram с готовым сообщением
+      const telegramUrl = `https://t.me/cupozon_mp?text=${encodeURIComponent(message)}`;
+      window.open(telegramUrl, "_blank");
+
+      // Очищаем форму
+      setFormData({
+        fullName: "",
+        contact: "",
+        reviewCount: "",
+        comment: "",
+      });
+
+      alert(
+        "Заявка подготовлена! Отправьте сообщение в Telegram для завершения.",
+      );
+    } catch (error) {
+      alert("Произошла ошибка. Попробуйте снова.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -580,7 +618,7 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid lg:grid-cols-3 xl:grid-cols-4 gap-8">
             <Card className="bg-white shadow-lg border-0 animate-fade-in">
               <CardContent className="p-6">
                 <div className="flex items-center mb-4">
@@ -676,6 +714,156 @@ const Index = () => {
                 </div>
               </CardContent>
             </Card>
+
+            <Card className="bg-white shadow-lg border-0 animate-fade-in">
+              <CardContent className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="flex text-yellow-400">
+                    {[...Array(5)].map((_, i) => (
+                      <Icon
+                        key={i}
+                        name="Star"
+                        size={20}
+                        className="fill-current"
+                      />
+                    ))}
+                  </div>
+                </div>
+                <p className="text-gray-700 mb-4">
+                  "За 2 недели подняли товар с 3.8 до 4.6 звезд. Заказы пошли!"
+                </p>
+                <div className="flex items-center">
+                  <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center mr-3">
+                    <span className="text-purple-600 font-semibold">И</span>
+                  </div>
+                  <div>
+                    <div className="font-semibold">Ирина</div>
+                    <div className="text-sm text-gray-500">
+                      Магазин косметики
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white shadow-lg border-0 animate-fade-in">
+              <CardContent className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="flex text-yellow-400">
+                    {[...Array(5)].map((_, i) => (
+                      <Icon
+                        key={i}
+                        name="Star"
+                        size={20}
+                        className="fill-current"
+                      />
+                    ))}
+                  </div>
+                </div>
+                <p className="text-gray-700 mb-4">
+                  "Работают быстро и качественно. Никаких блокировок, все
+                  чисто."
+                </p>
+                <div className="flex items-center">
+                  <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center mr-3">
+                    <span className="text-orange-600 font-semibold">С</span>
+                  </div>
+                  <div>
+                    <div className="font-semibold">Сергей</div>
+                    <div className="text-sm text-gray-500">Товары для дома</div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white shadow-lg border-0 animate-fade-in">
+              <CardContent className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="flex text-yellow-400">
+                    {[...Array(5)].map((_, i) => (
+                      <Icon
+                        key={i}
+                        name="Star"
+                        size={20}
+                        className="fill-current"
+                      />
+                    ))}
+                  </div>
+                </div>
+                <p className="text-gray-700 mb-4">
+                  "Рекомендую! Адекватные цены, хорошее качество работы."
+                </p>
+                <div className="flex items-center">
+                  <div className="w-10 h-10 bg-teal-100 rounded-full flex items-center justify-center mr-3">
+                    <span className="text-teal-600 font-semibold">Е</span>
+                  </div>
+                  <div>
+                    <div className="font-semibold">Елена</div>
+                    <div className="text-sm text-gray-500">
+                      Спортивные товары
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white shadow-lg border-0 animate-fade-in">
+              <CardContent className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="flex text-yellow-400">
+                    {[...Array(5)].map((_, i) => (
+                      <Icon
+                        key={i}
+                        name="Star"
+                        size={20}
+                        className="fill-current"
+                      />
+                    ))}
+                  </div>
+                </div>
+                <p className="text-gray-700 mb-4">
+                  "Сотрудничаем уже полгода. Стабильно высокое качество услуг."
+                </p>
+                <div className="flex items-center">
+                  <div className="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center mr-3">
+                    <span className="text-red-600 font-semibold">В</span>
+                  </div>
+                  <div>
+                    <div className="font-semibold">Виктор</div>
+                    <div className="text-sm text-gray-500">Автозапчасти</div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white shadow-lg border-0 animate-fade-in">
+              <CardContent className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="flex text-yellow-400">
+                    {[...Array(5)].map((_, i) => (
+                      <Icon
+                        key={i}
+                        name="Star"
+                        size={20}
+                        className="fill-current"
+                      />
+                    ))}
+                  </div>
+                </div>
+                <p className="text-gray-700 mb-4">
+                  "Помогли запустить новый товар. Отзывы появились быстро."
+                </p>
+                <div className="flex items-center">
+                  <div className="w-10 h-10 bg-pink-100 rounded-full flex items-center justify-center mr-3">
+                    <span className="text-pink-600 font-semibold">Н</span>
+                  </div>
+                  <div>
+                    <div className="font-semibold">Наталья</div>
+                    <div className="text-sm text-gray-500">Детские товары</div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -697,13 +885,17 @@ const Index = () => {
 
           <Card className="bg-white/80 backdrop-blur-sm shadow-xl border-0">
             <CardContent className="p-8">
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleFormSubmit}>
                 <div className="space-y-2">
                   <Label htmlFor="fullName">ФИО *</Label>
                   <Input
                     id="fullName"
                     type="text"
                     placeholder="Иванов Иван Иванович"
+                    value={formData.fullName}
+                    onChange={(e) =>
+                      setFormData({ ...formData, fullName: e.target.value })
+                    }
                     required
                   />
                 </div>
@@ -716,6 +908,10 @@ const Index = () => {
                     id="contact"
                     type="text"
                     placeholder="@username или +7 (999) 123-45-67"
+                    value={formData.contact}
+                    onChange={(e) =>
+                      setFormData({ ...formData, contact: e.target.value })
+                    }
                     required
                   />
                 </div>
@@ -726,6 +922,10 @@ const Index = () => {
                     id="reviewCount"
                     type="number"
                     placeholder="100"
+                    value={formData.reviewCount}
+                    onChange={(e) =>
+                      setFormData({ ...formData, reviewCount: e.target.value })
+                    }
                     required
                   />
                 </div>
@@ -736,6 +936,10 @@ const Index = () => {
                     id="comment"
                     className="flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                     placeholder="Опишите дополнительную информацию о вашем заказе..."
+                    value={formData.comment}
+                    onChange={(e) =>
+                      setFormData({ ...formData, comment: e.target.value })
+                    }
                   />
                 </div>
 
@@ -743,9 +947,10 @@ const Index = () => {
                   type="submit"
                   className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3"
                   size="lg"
+                  disabled={isSubmitting}
                 >
                   <Icon name="Send" size={20} className="mr-2" />
-                  Отправить заявку
+                  {isSubmitting ? "Отправляем..." : "Отправить заявку"}
                 </Button>
               </form>
             </CardContent>
@@ -766,34 +971,18 @@ const Index = () => {
             Свяжитесь с нами для консультации и расчета стоимости услуг
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex justify-center">
             <Button
               size="lg"
-              className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4"
-            >
-              <Icon name="Phone" size={20} className="mr-2" />
-              Позвонить
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4"
+              className="bg-white text-blue-600 hover:bg-gray-100 px-10 py-4 text-lg font-semibold"
+              onClick={() => window.open("https://t.me/cupozon_mp", "_blank")}
             >
               <Icon name="MessageCircle" size={20} className="mr-2" />
-              Написать в Telegram
+              Связаться с менеджером
             </Button>
           </div>
 
-          <div className="mt-12 grid md:grid-cols-3 gap-8 text-center">
-            <div>
-              <Icon
-                name="Phone"
-                size={24}
-                className="mx-auto text-blue-100 mb-2"
-              />
-              <div className="text-white font-semibold">Телефон</div>
-              <div className="text-blue-100">+7 (999) 123-45-67</div>
-            </div>
+          <div className="mt-12 grid md:grid-cols-2 gap-8 text-center">
             <div>
               <Icon
                 name="MessageCircle"
@@ -846,7 +1035,6 @@ const Index = () => {
             <div>
               <h3 className="font-semibold mb-4">Контакты</h3>
               <ul className="space-y-2 text-gray-400">
-                <li>+7 (999) 123-45-67</li>
                 <li>Telegram: @cupozon_mp</li>
               </ul>
             </div>
