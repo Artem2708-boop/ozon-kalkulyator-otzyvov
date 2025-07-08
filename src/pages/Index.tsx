@@ -436,6 +436,9 @@ const Index = () => {
                   <div className="text-xl font-bold text-blue-600 mb-1">
                     250 ₽
                   </div>
+                  <div className="text-xs text-gray-600 mb-1">
+                    за выкуп+отзыв
+                  </div>
                   <div className="text-xs text-gray-500">1-50 выкупов</div>
                 </div>
               </CardContent>
@@ -445,6 +448,7 @@ const Index = () => {
               <CardContent className="p-4">
                 <div className="text-center">
                   <div className="text-xl font-bold mb-1">150 ₽</div>
+                  <div className="text-xs opacity-90 mb-1">за выкуп+отзыв</div>
                   <div className="text-xs opacity-90">51-200 выкупов</div>
                   <Badge className="mt-2 bg-white text-green-600 text-xs">
                     ПОПУЛЯРНЫЙ
@@ -459,6 +463,9 @@ const Index = () => {
                   <div className="text-xl font-bold text-blue-600 mb-1">
                     130 ₽
                   </div>
+                  <div className="text-xs text-gray-600 mb-1">
+                    за выкуп+отзыв
+                  </div>
                   <div className="text-xs text-gray-500">200-300 выкупов</div>
                 </div>
               </CardContent>
@@ -469,6 +476,9 @@ const Index = () => {
                 <div className="text-center">
                   <div className="text-xl font-bold text-green-600 mb-1">
                     100 ₽
+                  </div>
+                  <div className="text-xs text-gray-600 mb-1">
+                    за выкуп+отзыв
                   </div>
                   <div className="text-xs text-gray-500">300-500 выкупов</div>
                 </div>
@@ -481,6 +491,9 @@ const Index = () => {
                   <div className="text-xl font-bold text-blue-600 mb-1">
                     80 ₽
                   </div>
+                  <div className="text-xs text-gray-600 mb-1">
+                    за выкуп+отзыв
+                  </div>
                   <div className="text-xs text-gray-500">500-1000 выкупов</div>
                 </div>
               </CardContent>
@@ -491,6 +504,9 @@ const Index = () => {
                 <div className="text-center">
                   <div className="text-xl font-bold text-green-600 mb-1">
                     60 ₽
+                  </div>
+                  <div className="text-xs text-gray-600 mb-1">
+                    за выкуп+отзыв
                   </div>
                   <div className="text-xs text-gray-500">1000+ выкупов</div>
                 </div>
