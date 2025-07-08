@@ -71,7 +71,7 @@ const Index = () => {
                 <Icon name="ShoppingCart" size={20} className="text-white" />
               </div>
               <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent">
-                OZON ЗАРТИН
+                CUPOZON
               </span>
             </div>
             <div className="hidden md:flex items-center space-x-8">
@@ -170,16 +170,19 @@ const Index = () => {
                   <Icon name="Play" size={20} className="mr-2" />
                   Как это работает
                 </Button>
+              </div>
+
+              <div className="mt-6">
                 <Button
                   size="lg"
-                  className="bg-green-500 hover:bg-green-600 text-white px-8 py-4"
+                  className="bg-green-500 hover:bg-green-600 text-white px-12 py-6 text-lg font-semibold w-full sm:w-auto"
                   onClick={() =>
                     document
                       .getElementById("contact-form")
                       ?.scrollIntoView({ behavior: "smooth" })
                   }
                 >
-                  <Icon name="ShoppingCart" size={20} className="mr-2" />
+                  <Icon name="ShoppingCart" size={24} className="mr-3" />
                   Заказать отзывы
                 </Button>
               </div>
@@ -406,88 +409,70 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
             <Card className="bg-white shadow-lg border-0 hover:shadow-xl transition-shadow">
-              <CardContent className="p-6">
+              <CardContent className="p-4">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-blue-600 mb-2">
+                  <div className="text-xl font-bold text-blue-600 mb-1">
                     250 ₽
                   </div>
-                  <div className="text-gray-600 mb-4">за выкуп + отзыв</div>
-                  <div className="text-sm text-gray-500">
-                    от 1 до 50 выкупов
-                  </div>
+                  <div className="text-xs text-gray-500">1-50 выкупов</div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-gradient-to-r from-green-500 to-blue-600 text-white shadow-lg border-0 hover:shadow-xl transition-shadow transform scale-105">
+              <CardContent className="p-4">
+                <div className="text-center">
+                  <div className="text-xl font-bold mb-1">150 ₽</div>
+                  <div className="text-xs opacity-90">51-200 выкупов</div>
+                  <Badge className="mt-2 bg-white text-green-600 text-xs">
+                    ПОПУЛЯРНЫЙ
+                  </Badge>
                 </div>
               </CardContent>
             </Card>
 
             <Card className="bg-white shadow-lg border-0 hover:shadow-xl transition-shadow">
-              <CardContent className="p-6">
+              <CardContent className="p-4">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-green-600 mb-2">
-                    150 ₽
-                  </div>
-                  <div className="text-gray-600 mb-4">за выкуп + отзыв</div>
-                  <div className="text-sm text-gray-500">
-                    от 51 до 200 выкупов
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-white shadow-lg border-0 hover:shadow-xl transition-shadow">
-              <CardContent className="p-6">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-blue-600 mb-2">
+                  <div className="text-xl font-bold text-blue-600 mb-1">
                     130 ₽
                   </div>
-                  <div className="text-gray-600 mb-4">за выкуп + отзыв</div>
-                  <div className="text-sm text-gray-500">
-                    от 200 до 300 выкупов
-                  </div>
+                  <div className="text-xs text-gray-500">200-300 выкупов</div>
                 </div>
               </CardContent>
             </Card>
 
             <Card className="bg-white shadow-lg border-0 hover:shadow-xl transition-shadow">
-              <CardContent className="p-6">
+              <CardContent className="p-4">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-green-600 mb-2">
+                  <div className="text-xl font-bold text-green-600 mb-1">
                     100 ₽
                   </div>
-                  <div className="text-gray-600 mb-4">за выкуп + отзыв</div>
-                  <div className="text-sm text-gray-500">
-                    от 300 до 500 выкупов
-                  </div>
+                  <div className="text-xs text-gray-500">300-500 выкупов</div>
                 </div>
               </CardContent>
             </Card>
 
             <Card className="bg-white shadow-lg border-0 hover:shadow-xl transition-shadow">
-              <CardContent className="p-6">
+              <CardContent className="p-4">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-blue-600 mb-2">
+                  <div className="text-xl font-bold text-blue-600 mb-1">
                     80 ₽
                   </div>
-                  <div className="text-gray-600 mb-4">за выкуп + отзыв</div>
-                  <div className="text-sm text-gray-500">
-                    от 500 до 1000 выкупов
-                  </div>
+                  <div className="text-xs text-gray-500">500-1000 выкупов</div>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="bg-gradient-to-r from-green-500 to-blue-600 text-white shadow-lg border-0 hover:shadow-xl transition-shadow">
-              <CardContent className="p-6">
+            <Card className="bg-white shadow-lg border-0 hover:shadow-xl transition-shadow">
+              <CardContent className="p-4">
                 <div className="text-center">
-                  <div className="text-2xl font-bold mb-2">60 ₽</div>
-                  <div className="mb-4">за выкуп + отзыв</div>
-                  <div className="text-sm opacity-90">
-                    от 1000 до 10000 выкупов
+                  <div className="text-xl font-bold text-green-600 mb-1">
+                    60 ₽
                   </div>
-                  <Badge className="mt-2 bg-white text-green-600">
-                    ЛУЧШАЯ ЦЕНА
-                  </Badge>
+                  <div className="text-xs text-gray-500">1000+ выкупов</div>
                 </div>
               </CardContent>
             </Card>
@@ -763,7 +748,7 @@ const Index = () => {
             </Button>
           </div>
 
-          <div className="mt-12 grid md:grid-cols-2 gap-8 text-center">
+          <div className="mt-12 grid md:grid-cols-3 gap-8 text-center">
             <div>
               <Icon
                 name="Phone"
@@ -772,6 +757,15 @@ const Index = () => {
               />
               <div className="text-white font-semibold">Телефон</div>
               <div className="text-blue-100">+7 (999) 123-45-67</div>
+            </div>
+            <div>
+              <Icon
+                name="MessageCircle"
+                size={24}
+                className="mx-auto text-blue-100 mb-2"
+              />
+              <div className="text-white font-semibold">Telegram</div>
+              <div className="text-blue-100">@cupozon_mp</div>
             </div>
             <div>
               <Icon
@@ -795,7 +789,7 @@ const Index = () => {
                 <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-green-500 rounded-lg flex items-center justify-center">
                   <Icon name="ShoppingCart" size={20} className="text-white" />
                 </div>
-                <span className="text-xl font-bold">OZON ЗАРТИН</span>
+                <span className="text-xl font-bold">CUPOZON</span>
               </div>
               <p className="text-gray-400 mb-4">
                 Профессиональные услуги продвижения товаров на маркетплейсе
@@ -817,13 +811,13 @@ const Index = () => {
               <h3 className="font-semibold mb-4">Контакты</h3>
               <ul className="space-y-2 text-gray-400">
                 <li>+7 (999) 123-45-67</li>
-                <li>Telegram: @ozonzartin</li>
+                <li>Telegram: @cupozon_mp</li>
               </ul>
             </div>
           </div>
 
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 OZON ЗАРТИН. Все права защищены.</p>
+            <p>&copy; 2024 CUPOZON. Все права защищены.</p>
           </div>
         </div>
       </footer>
