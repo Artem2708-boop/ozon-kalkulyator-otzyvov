@@ -267,7 +267,7 @@ const Index = () => {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             <div className="animate-fade-in">
               <div className="text-3xl lg:text-4xl font-bold text-blue-600 mb-2">
-                5000+
+                500000+
               </div>
               <div className="text-gray-600">Выполненных заказов</div>
             </div>
