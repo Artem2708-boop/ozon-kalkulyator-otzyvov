@@ -963,13 +963,15 @@ const Index = () => {
                 </div>
 
                 <Button
-                  type="submit"
+                  type="button"
                   className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3"
                   size="lg"
-                  disabled={isSubmitting}
+                  onClick={() =>
+                    window.open("https://t.me/m/5iV3CeuSNjcy", "_blank")
+                  }
                 >
                   <Icon name="Send" size={20} className="mr-2" />
-                  {isSubmitting ? "Отправляем..." : "Отправить заявку"}
+                  Отправить заявку
                 </Button>
               </form>
             </CardContent>
