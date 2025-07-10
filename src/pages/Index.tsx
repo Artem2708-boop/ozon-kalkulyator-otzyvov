@@ -980,6 +980,76 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Advantages Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl lg:text-4xl font-bold text-center mb-12 text-gray-800">
+            Преимущества работы с нами
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white p-6 rounded-lg shadow-md text-center">
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Icon name="Shield" size={32} className="text-green-600" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-gray-800">
+                Без штрафов и блокировок
+              </h3>
+              <p className="text-gray-600">
+                Работаем безопасно, исключая риски для вашего аккаунта
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-md text-center">
+              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Icon name="Truck" size={32} className="text-blue-600" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-gray-800">
+                Схема RealFbs
+              </h3>
+              <p className="text-gray-600">
+                Работаем только по схеме RealFbs без движения товара
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-md text-center">
+              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Icon name="Target" size={32} className="text-purple-600" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-gray-800">
+                Доходимость 95%
+              </h3>
+              <p className="text-gray-600">
+                Из 100 выкупов придут 95 отзывов - гарантированный результат
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-md text-center">
+              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Icon name="Zap" size={32} className="text-orange-600" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-gray-800">
+                Скорость работы
+              </h3>
+              <p className="text-gray-600">
+                Быстрое выполнение заказов и оперативная обратная связь
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-md text-center">
+              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Icon name="TrendingUp" size={32} className="text-red-600" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-gray-800">
+                Большие объемы
+              </h3>
+              <p className="text-gray-600">
+                Можем выкупать до 7000 единиц в день
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section
         id="contact"
