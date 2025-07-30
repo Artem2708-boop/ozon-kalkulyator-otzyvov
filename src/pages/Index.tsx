@@ -11,6 +11,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Icon from "@/components/ui/icon";
 import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { sendEmail, initEmailJS } from "@/utils/emailService";
 
 const Index = () => {
@@ -154,6 +155,12 @@ const Index = () => {
                 className="text-gray-700 hover:text-blue-600 transition-colors"
               >
                 Калькулятор
+              </a>
+              <a
+                href="#services"
+                className="text-gray-700 hover:text-blue-600 transition-colors"
+              >
+                Услуги
               </a>
               <a
                 href="#pricing"
@@ -360,6 +367,243 @@ const Index = () => {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Services Tabs Section */}
+      <section
+        id="services"
+        className="py-20 bg-white"
+      >
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              Наши услуги
+            </h2>
+            <p className="text-xl text-gray-600">
+              Полный спектр услуг для продвижения товаров на Озон
+            </p>
+          </div>
+
+          <Tabs defaultValue="samovykupy" className="w-full">
+            <TabsList className="grid w-full grid-cols-4 mb-8">
+              <TabsTrigger value="samovykupy">Самовыкупы</TabsTrigger>
+              <TabsTrigger value="reviews">Отзывы</TabsTrigger>
+              <TabsTrigger value="seo">SEO оптимизация</TabsTrigger>
+              <TabsTrigger value="consulting">Консультации</TabsTrigger>
+            </TabsList>
+
+            <TabsContent value="samovykupy" className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                    Самовыкупы товаров по схеме RealFbs
+                  </h3>
+                  <p className="text-gray-600 mb-6">
+                    Профессиональные самовыкупы без движения товара. Увеличиваем 
+                    количество продаж и улучшаем позиции в поиске Озон.
+                  </p>
+                  <ul className="space-y-3 text-gray-600">
+                    <li className="flex items-center">
+                      <Icon name="Check" className="text-green-500 mr-2" size={20} />
+                      Доходимость 95%
+                    </li>
+                    <li className="flex items-center">
+                      <Icon name="Check" className="text-green-500 mr-2" size={20} />
+                      До 7000 выкупов в день
+                    </li>
+                    <li className="flex items-center">
+                      <Icon name="Check" className="text-green-500 mr-2" size={20} />
+                      Работа без движения товара
+                    </li>
+                    <li className="flex items-center">
+                      <Icon name="Check" className="text-green-500 mr-2" size={20} />
+                      Безопасная схема RealFbs
+                    </li>
+                  </ul>
+                </div>
+                <div className="bg-gradient-to-r from-blue-50 to-green-50 p-6 rounded-lg">
+                  <h4 className="font-bold text-lg mb-4">Результат самовыкупов:</h4>
+                  <div className="space-y-3">
+                    <div className="flex justify-between">
+                      <span>Рост продаж:</span>
+                      <span className="font-bold text-green-600">+300-500%</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Улучшение позиций:</span>
+                      <span className="font-bold text-blue-600">в ТОП-10</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Время результата:</span>
+                      <span className="font-bold text-orange-600">3-7 дней</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </TabsContent>
+
+            <TabsContent value="reviews" className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                    Накрутка отзывов на Озон
+                  </h3>
+                  <p className="text-gray-600 mb-6">
+                    Качественные отзывы от реальных аккаунтов с историей покупок.
+                    Повышаем рейтинг товара и доверие покупателей.
+                  </p>
+                  <ul className="space-y-3 text-gray-600">
+                    <li className="flex items-center">
+                      <Icon name="Star" className="text-yellow-500 mr-2" size={20} />
+                      Отзывы с фото и видео
+                    </li>
+                    <li className="flex items-center">
+                      <Icon name="Star" className="text-yellow-500 mr-2" size={20} />
+                      Аккаунты с историей покупок
+                    </li>
+                    <li className="flex items-center">
+                      <Icon name="Star" className="text-yellow-500 mr-2" size={20} />
+                      Детальные развернутые отзывы
+                    </li>
+                    <li className="flex items-center">
+                      <Icon name="Star" className="text-yellow-500 mr-2" size={20} />
+                      Постепенное размещение
+                    </li>
+                  </ul>
+                </div>
+                <div className="bg-gradient-to-r from-yellow-50 to-orange-50 p-6 rounded-lg">
+                  <h4 className="font-bold text-lg mb-4">Повышение рейтинга:</h4>
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <span>3.5 → 4.5 звезд:</span>
+                      <span className="font-bold text-green-600">15-20 отзывов</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span>4.0 → 4.7 звезд:</span>
+                      <span className="font-bold text-green-600">25-30 отзывов</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span>4.5 → 4.9 звезд:</span>
+                      <span className="font-bold text-green-600">40-50 отзывов</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </TabsContent>
+
+            <TabsContent value="seo" className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                    SEO оптимизация товара для роста позиций
+                  </h3>
+                  <p className="text-gray-600 mb-6">
+                    Комплексная оптимизация карточки товара для улучшения видимости
+                    в поиске Озон и увеличения органического трафика.
+                  </p>
+                  <ul className="space-y-3 text-gray-600">
+                    <li className="flex items-center">
+                      <Icon name="Search" className="text-blue-500 mr-2" size={20} />
+                      Анализ ключевых слов конкурентов
+                    </li>
+                    <li className="flex items-center">
+                      <Icon name="Search" className="text-blue-500 mr-2" size={20} />
+                      Оптимизация названия и описания
+                    </li>
+                    <li className="flex items-center">
+                      <Icon name="Search" className="text-blue-500 mr-2" size={20} />
+                      Подбор высокочастотных запросов
+                    </li>
+                    <li className="flex items-center">
+                      <Icon name="Search" className="text-blue-500 mr-2" size={20} />
+                      Настройка характеристик товара
+                    </li>
+                    <li className="flex items-center">
+                      <Icon name="Search" className="text-blue-500 mr-2" size={20} />
+                      Оптимизация изображений
+                    </li>
+                  </ul>
+                </div>
+                <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-lg">
+                  <h4 className="font-bold text-lg mb-4">Результаты SEO оптимизации:</h4>
+                  <div className="space-y-3">
+                    <div className="flex justify-between">
+                      <span>Позиции в поиске:</span>
+                      <span className="font-bold text-blue-600">ТОП-20 → ТОП-5</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Органический трафик:</span>
+                      <span className="font-bold text-green-600">+200-400%</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Конверсия в продажи:</span>
+                      <span className="font-bold text-orange-600">+150-250%</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Время результата:</span>
+                      <span className="font-bold text-purple-600">7-14 дней</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </TabsContent>
+
+            <TabsContent value="consulting" className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                    Консультации по маркетплейсу Озон
+                  </h3>
+                  <p className="text-gray-600 mb-6">
+                    Персональные консультации от экспертов маркетплейса Озон.
+                    Поможем разобраться в тонкостях продвижения и избежать блокировок.
+                  </p>
+                  <ul className="space-y-3 text-gray-600">
+                    <li className="flex items-center">
+                      <Icon name="MessageCircle" className="text-green-500 mr-2" size={20} />
+                      Аудит текущей стратегии продвижения
+                    </li>
+                    <li className="flex items-center">
+                      <Icon name="MessageCircle" className="text-green-500 mr-2" size={20} />
+                      Анализ конкурентов и ниши
+                    </li>
+                    <li className="flex items-center">
+                      <Icon name="MessageCircle" className="text-green-500 mr-2" size={20} />
+                      Составление плана продвижения
+                    </li>
+                    <li className="flex items-center">
+                      <Icon name="MessageCircle" className="text-green-500 mr-2" size={20} />
+                      Помощь в настройке рекламы
+                    </li>
+                    <li className="flex items-center">
+                      <Icon name="MessageCircle" className="text-green-500 mr-2" size={20} />
+                      Обучение работе с аналитикой
+                    </li>
+                  </ul>
+                </div>
+                <div className="bg-gradient-to-r from-green-50 to-teal-50 p-6 rounded-lg">
+                  <h4 className="font-bold text-lg mb-4">Форматы консультаций:</h4>
+                  <div className="space-y-4">
+                    <div className="border-l-4 border-green-500 pl-4">
+                      <h5 className="font-bold">Экспресс-консультация</h5>
+                      <p className="text-sm text-gray-600">30 мин • 2000 ₽</p>
+                      <p className="text-sm">Быстрые ответы на вопросы</p>
+                    </div>
+                    <div className="border-l-4 border-blue-500 pl-4">
+                      <h5 className="font-bold">Полный аудит</h5>
+                      <p className="text-sm text-gray-600">2 часа • 8000 ₽</p>
+                      <p className="text-sm">Детальный разбор + рекомендации</p>
+                    </div>
+                    <div className="border-l-4 border-purple-500 pl-4">
+                      <h5 className="font-bold">Месячное сопровождение</h5>
+                      <p className="text-sm text-gray-600">Неограниченно • 25000 ₽</p>
+                      <p className="text-sm">Постоянная поддержка + стратегия</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </TabsContent>
+          </Tabs>
         </div>
       </section>
 
