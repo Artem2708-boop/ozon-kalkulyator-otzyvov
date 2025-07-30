@@ -21,9 +21,13 @@ const Index = () => {
   const [reviews3, setReviews3] = useState("");
   const [reviews2, setReviews2] = useState("");
   const [reviews1, setReviews1] = useState("");
-  const [results, setResults] = useState<{ rating: number; needed: number }[]>(
-    [],
-  );
+  const [results, setResults] = useState<{ 
+    rating: number; 
+    needed: number; 
+    pricePerReview?: number; 
+    totalCost?: number; 
+    isBestValue?: boolean; 
+  }[]>([]);
 
   // Form states
   const [formData, setFormData] = useState({
@@ -66,18 +70,18 @@ const Index = () => {
           
           let needed;
           
-          if (targetRating === 5.0) {
-            // Для достижения 5.0 звезд нужно убрать все отзывы ниже 5 звезд
-            // и добавить достаточно 5-звездочных отзывов
+          if (Math.abs(targetRating - 5.0) < 0.01) {
+            // Для достижения 5.0 звезд: все отзывы должны быть 5-звездочными
+            // Поэтому нужно добавить столько 5-звездочных, чтобы они "перевесили" все остальные
             const badReviews = r4 + r3 + r2 + r1;
             if (badReviews === 0) {
               needed = 0; // Уже 5.0 звезд
             } else {
-              // Добавляем много 5-звездочных отзывов, чтобы "разбавить" плохие
-              // Формула: нужно чтобы (r5 + N) / (total + N) > 0.995 (округление до 5.0)
-              // N > (0.995 * total - r5) / (1 - 0.995) = (0.995 * total - r5) / 0.005
-              needed = Math.ceil((0.995 * total - r5) / 0.005);
-              if (needed < 0) needed = 0;
+              // Практически для 5.0 нужно очень много отзывов
+              // Используем приближение к 4.99
+              const numerator = 4.99 * total - currentTotalScore;
+              const denominator = 5 - 4.99;
+              needed = Math.ceil(numerator / denominator);
             }
           } else {
             // Обычная формула для рейтингов 4.5-4.9
@@ -87,15 +91,55 @@ const Index = () => {
           }
 
           if (needed >= 0) {
+            // Расчет стоимости в зависимости от количества
+            let pricePerReview = 250; // Базовая цена
+            if (needed >= 51 && needed <= 200) {
+              pricePerReview = 150;
+            } else if (needed >= 201 && needed <= 500) {
+              pricePerReview = 120;
+            } else if (needed >= 501 && needed <= 1000) {
+              pricePerReview = 100;
+            } else if (needed >= 1001 && needed <= 2000) {
+              pricePerReview = 80;
+            } else if (needed > 2000) {
+              pricePerReview = 60;
+            }
+            
+            const totalCost = needed * pricePerReview;
+            
             calculatedResults.push({
               rating: Math.round(targetRating * 10) / 10,
               needed: needed,
+              pricePerReview: pricePerReview,
+              totalCost: totalCost,
             });
           }
         }
       }
 
+      // Находим самый выгодный вариант (лучшее соотношение цена/качество)
+      // Это будет вариант с минимальной стоимостью за 0.1 звезды
+      if (calculatedResults.length > 0) {
+        let bestValueIndex = 0;
+        let bestValueRatio = Infinity;
+        
+        calculatedResults.forEach((result, index) => {
+          const ratingGain = result.rating - currentRating;
+          const valueRatio = result.totalCost / ratingGain;
+          if (valueRatio < bestValueRatio) {
+            bestValueRatio = valueRatio;
+            bestValueIndex = index;
+          }
+        });
+        
+        calculatedResults[bestValueIndex].isBestValue = true;
+      }
+
       setResults(calculatedResults);
+    } else {
+      // Показываем сообщение об ошибке
+      alert("Пожалуйста, проверьте введенные данные. Сумма отзывов по звездам должна равняться общему количеству отзывов.");
+      setResults([]);
     }
   };
 
@@ -765,37 +809,63 @@ const Index = () => {
                   <h3 className="text-lg font-semibold text-gray-900">
                     Результаты расчета:
                   </h3>
-                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  <div className="grid sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
                     {results.map((result, index) => (
                       <div
                         key={index}
-                        className="p-4 bg-gradient-to-r from-green-50 to-blue-50 rounded-lg border border-green-200"
+                        className={`relative p-6 rounded-lg border-2 ${
+                          result.isBestValue
+                            ? "bg-gradient-to-r from-yellow-50 to-orange-50 border-orange-300 shadow-lg"
+                            : "bg-gradient-to-r from-green-50 to-blue-50 border-green-200"
+                        }`}
                       >
-                        <div className="text-center">
-                          <div className="text-xl font-bold text-green-600 mb-1">
-                            {result.needed} отзывов
+                        {result.isBestValue && (
+                          <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                            <Badge className="bg-orange-500 text-white px-3 py-1 text-xs font-bold">
+                              ВЫГОДНО
+                            </Badge>
                           </div>
-                          <p className="text-sm text-gray-700">
-                            для рейтинга {result.rating.toFixed(1)} ⭐
-                          </p>
+                        )}
+                        
+                        <div className="text-center space-y-3">
+                          <div className="text-xl font-bold text-gray-900 mb-1">
+                            {result.rating.toFixed(1)} ⭐
+                          </div>
+                          
+                          <div className="space-y-2">
+                            <div className="text-lg font-semibold text-blue-600">
+                              {result.needed} отзывов
+                            </div>
+                            <div className="text-sm text-gray-600">
+                              {result.pricePerReview} ₽ за отзыв
+                            </div>
+                            <div className="text-xl font-bold text-green-600">
+                              {result.totalCost.toLocaleString()} ₽
+                            </div>
+                          </div>
+                          
+                          <Button
+                            className={`w-full mt-4 ${
+                              result.isBestValue
+                                ? "bg-orange-500 hover:bg-orange-600"
+                                : "bg-green-500 hover:bg-green-600"
+                            } text-white font-semibold`}
+                            onClick={() => {
+                              setFormData(prev => ({
+                                ...prev,
+                                reviewCount: result.needed.toString()
+                              }));
+                              document
+                                .getElementById("contact-form")
+                                ?.scrollIntoView({ behavior: "smooth" });
+                            }}
+                          >
+                            <Icon name="ShoppingCart" size={16} className="mr-2" />
+                            Заказать
+                          </Button>
                         </div>
                       </div>
                     ))}
-                  </div>
-
-                  <div className="text-center mt-6">
-                    <Button
-                      size="lg"
-                      className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 font-semibold"
-                      onClick={() =>
-                        document
-                          .getElementById("contact-form")
-                          ?.scrollIntoView({ behavior: "smooth" })
-                      }
-                    >
-                      <Icon name="ShoppingCart" size={20} className="mr-2" />
-                      Заказать отзывы
-                    </Button>
                   </div>
                 </div>
               )}
