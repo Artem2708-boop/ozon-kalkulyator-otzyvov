@@ -1432,7 +1432,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-4 gap-8">
+          <div className="grid lg:grid-cols-5 gap-8">
             <div className="lg:col-span-2">
               <div className="flex items-center space-x-2 mb-4">
                 <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-green-500 rounded-lg flex items-center justify-center">
@@ -1441,8 +1441,8 @@ const Index = () => {
                 <span className="text-xl font-bold">CUPOZON</span>
               </div>
               <p className="text-gray-400 mb-4">
-                Профессиональные услуги продвижения товаров на маркетплейсе
-                Озон. Увеличиваем рейтинг, улучшаем позиции в поиске.
+                Лидеры по количеству подписчиков в Telegram по выкупам.
+                Профессиональные услуги продвижения товаров на маркетплейсе Озон.
               </p>
             </div>
 
@@ -1454,6 +1454,28 @@ const Index = () => {
                 <li>SEO оптимизация</li>
                 <li>Консультации</li>
               </ul>
+            </div>
+
+            <div>
+              <h3 className="font-semibold mb-4">Сотрудничаем с</h3>
+              <div className="space-y-4">
+                <div>
+                  <h4 className="font-medium text-white mb-2">Бренды:</h4>
+                  <ul className="space-y-1 text-gray-400 text-sm">
+                    <li>• vshell</li>
+                    <li>• wetnose</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-medium text-white mb-2">Клубы:</h4>
+                  <ul className="space-y-1 text-gray-400 text-sm">
+                    <li>• Mpseller</li>
+                    <li className="text-xs text-gray-500">
+                      (сотрудничаем только с резидентами)
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
 
             <div>
