@@ -63,12 +63,30 @@ const Index = () => {
           // N = (целевой_рейтинг * текущее_количество - текущая_сумма_баллов) / (5 - целевой_рейтинг)
 
           const currentTotalScore = 5 * r5 + 4 * r4 + 3 * r3 + 2 * r2 + 1 * r1;
-          const numerator = targetRating * total - currentTotalScore;
-          const denominator = 5 - targetRating;
+          
+          let needed;
+          
+          if (targetRating === 5.0) {
+            // Для достижения 5.0 звезд нужно убрать все отзывы ниже 5 звезд
+            // и добавить достаточно 5-звездочных отзывов
+            const badReviews = r4 + r3 + r2 + r1;
+            if (badReviews === 0) {
+              needed = 0; // Уже 5.0 звезд
+            } else {
+              // Добавляем много 5-звездочных отзывов, чтобы "разбавить" плохие
+              // Формула: нужно чтобы (r5 + N) / (total + N) > 0.995 (округление до 5.0)
+              // N > (0.995 * total - r5) / (1 - 0.995) = (0.995 * total - r5) / 0.005
+              needed = Math.ceil((0.995 * total - r5) / 0.005);
+              if (needed < 0) needed = 0;
+            }
+          } else {
+            // Обычная формула для рейтингов 4.5-4.9
+            const numerator = targetRating * total - currentTotalScore;
+            const denominator = 5 - targetRating;
+            needed = Math.ceil(numerator / denominator);
+          }
 
-          const needed = Math.ceil(numerator / denominator);
-
-          if (needed > 0 && denominator > 0) {
+          if (needed >= 0) {
             calculatedResults.push({
               rating: Math.round(targetRating * 10) / 10,
               needed: needed,
