@@ -237,6 +237,12 @@ const Index = () => {
                 Отзывы
               </a>
               <a
+                href="/management"
+                className="text-gray-700 hover:text-blue-600 transition-colors"
+              >
+                Ведение магазина
+              </a>
+              <a
                 href="#contact"
                 className="text-gray-700 hover:text-blue-600 transition-colors"
               >
