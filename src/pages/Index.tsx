@@ -1136,6 +1136,106 @@ const Index = () => {
               </CardContent>
             </Card>
           </div>
+
+          {/* Premium Package */}
+          <div className="mt-16 max-w-4xl mx-auto">
+            <Card className="bg-gradient-to-br from-orange-500 via-red-500 to-pink-600 text-white shadow-2xl border-0 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32"></div>
+              <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full -ml-24 -mb-24"></div>
+              
+              <CardContent className="p-10 relative z-10">
+                <div className="text-center mb-8">
+                  <Badge className="bg-white text-orange-600 mb-4 text-sm font-bold px-4 py-1">
+                    🔥 ПРЕМИУМ ПАКЕТ
+                  </Badge>
+                  <h3 className="text-3xl lg:text-4xl font-bold mb-3">
+                    Карточка под ключ
+                  </h3>
+                  <div className="text-5xl font-bold mb-2">
+                    23 000 ₽
+                  </div>
+                  <p className="text-lg opacity-90 mb-6">
+                    Полностью готовая карточка для старта продаж на Ozon или Wildberries
+                  </p>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-8 mb-8">
+                  <div>
+                    <h4 className="text-xl font-bold mb-4 flex items-center">
+                      <Icon name="Sparkles" size={24} className="mr-2" />
+                      Что входит в пакет:
+                    </h4>
+                    <ul className="space-y-3">
+                      <li className="flex items-start">
+                        <Icon name="CheckCircle" className="mr-3 mt-1 flex-shrink-0" size={20} />
+                        <span><strong>Анализ ключевых слов</strong> и проработка SEO</span>
+                      </li>
+                      <li className="flex items-start">
+                        <Icon name="CheckCircle" className="mr-3 mt-1 flex-shrink-0" size={20} />
+                        <span><strong>Написание ТЗ</strong> для дизайнера</span>
+                      </li>
+                      <li className="flex items-start">
+                        <Icon name="CheckCircle" className="mr-3 mt-1 flex-shrink-0" size={20} />
+                        <span><strong>Работа дизайнера</strong> (6 слайдов входит в стоимость)</span>
+                      </li>
+                      <li className="flex items-start">
+                        <Icon name="CheckCircle" className="mr-3 mt-1 flex-shrink-0" size={20} />
+                        <span><strong>30 отзывов с оценкой 5 звезд</strong> на карточке</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 className="text-xl font-bold mb-4 flex items-center">
+                      <Icon name="Gift" size={24} className="mr-2" />
+                      Результат:
+                    </h4>
+                    <ul className="space-y-3">
+                      <li className="flex items-start">
+                        <Icon name="Star" className="mr-3 mt-1 flex-shrink-0 fill-current" size={20} />
+                        <span>Готовая карточка с высоким рейтингом</span>
+                      </li>
+                      <li className="flex items-start">
+                        <Icon name="Star" className="mr-3 mt-1 flex-shrink-0 fill-current" size={20} />
+                        <span>Профессиональный дизайн товара</span>
+                      </li>
+                      <li className="flex items-start">
+                        <Icon name="Star" className="mr-3 mt-1 flex-shrink-0 fill-current" size={20} />
+                        <span>Оптимизация под поиск маркетплейса</span>
+                      </li>
+                      <li className="flex items-start">
+                        <Icon name="Star" className="mr-3 mt-1 flex-shrink-0 fill-current" size={20} />
+                        <span>Можно сразу начинать продажи</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="bg-white/20 rounded-lg p-4 mb-6">
+                  <p className="text-sm text-center">
+                    <Icon name="Info" size={16} className="inline mr-2" />
+                    Расчет необходимого количества отзывов производится индивидуально. 
+                    30 отзывов входят в пакет, дополнительные отзывы по стандартному тарифу.
+                  </p>
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button
+                    size="lg"
+                    className="bg-white text-orange-600 hover:bg-gray-100 px-10 py-6 text-lg font-bold"
+                    onClick={() =>
+                      document
+                        .getElementById("contact-form")
+                        ?.scrollIntoView({ behavior: "smooth" })
+                    }
+                  >
+                    <Icon name="ShoppingCart" size={24} className="mr-3" />
+                    Заказать премиум пакет
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
