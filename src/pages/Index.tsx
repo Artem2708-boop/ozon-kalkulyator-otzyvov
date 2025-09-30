@@ -1298,85 +1298,44 @@ const Index = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Обратная связь
+              Связаться с нами для заказа
             </h2>
             <p className="text-xl text-gray-600">
-              Оставьте заявку и мы свяжемся с вами для обсуждения деталей
+              Напишите нам в Telegram для обсуждения деталей заказа
             </p>
           </div>
 
           <Card className="bg-white/80 backdrop-blur-sm shadow-xl border-0">
             <CardContent className="p-8">
-              <form className="space-y-6" onSubmit={handleFormSubmit}>
-                <div className="space-y-2">
-                  <Label htmlFor="fullName">ФИО *</Label>
-                  <Input
-                    id="fullName"
-                    type="text"
-                    placeholder="Иванов Иван Иванович"
-                    value={formData.fullName}
-                    onChange={(e) =>
-                      setFormData({ ...formData, fullName: e.target.value })
-                    }
-                    required
-                  />
+              <div className="text-center space-y-6">
+                <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto">
+                  <Icon name="Send" size={40} className="text-white" />
                 </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="contact">
-                    Аккаунт в Telegram или номер телефона *
-                  </Label>
-                  <Input
-                    id="contact"
-                    type="text"
-                    placeholder="@username или +7 (999) 123-45-67"
-                    value={formData.contact}
-                    onChange={(e) =>
-                      setFormData({ ...formData, contact: e.target.value })
-                    }
-                    required
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="reviewCount">Количество отзывов *</Label>
-                  <Input
-                    id="reviewCount"
-                    type="number"
-                    placeholder="100"
-                    value={formData.reviewCount}
-                    onChange={(e) =>
-                      setFormData({ ...formData, reviewCount: e.target.value })
-                    }
-                    required
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="comment">Комментарий (необязательно)</Label>
-                  <textarea
-                    id="comment"
-                    className="flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                    placeholder="Опишите дополнительную информацию о вашем заказе..."
-                    value={formData.comment}
-                    onChange={(e) =>
-                      setFormData({ ...formData, comment: e.target.value })
-                    }
-                  />
+                
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                    Готовы начать работу?
+                  </h3>
+                  <p className="text-gray-600 mb-6">
+                    Свяжитесь с нами в Telegram для быстрой консультации и оформления заказа
+                  </p>
                 </div>
 
                 <Button
-                  type="button"
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3"
                   size="lg"
-                  onClick={() =>
-                    window.open("https://t.me/m/5iV3CeuSNjcy", "_blank")
-                  }
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-12 py-6 text-lg font-semibold"
+                  onClick={() => window.open("https://t.me/cupozon_mp", "_blank")}
                 >
-                  <Icon name="Send" size={20} className="mr-2" />
-                  Отправить заявку
+                  <Icon name="Send" size={24} className="mr-3" />
+                  Написать нам в Telegram
                 </Button>
-              </form>
+
+                <div className="pt-6 border-t border-gray-200">
+                  <p className="text-sm text-gray-500">
+                    Отвечаем быстро • Работаем 24/7 • Консультация бесплатно
+                  </p>
+                </div>
+              </div>
             </CardContent>
           </Card>
         </div>
