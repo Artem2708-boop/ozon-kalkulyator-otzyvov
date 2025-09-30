@@ -976,6 +976,169 @@ const Index = () => {
         </div>
       </section>
 
+      {/* SEO Pricing Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              Цены на SEO оптимизацию
+            </h2>
+            <p className="text-xl text-gray-600">
+              Профессиональная оптимизация карточек товаров для роста в поиске
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <Card className="bg-white shadow-lg border-2 border-gray-200 hover:shadow-xl transition-shadow">
+              <CardContent className="p-8">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Icon name="FileText" size={32} className="text-blue-600" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                    Одна карточка
+                  </h3>
+                  <div className="text-4xl font-bold text-blue-600 mb-4">
+                    3000 ₽
+                  </div>
+                  <p className="text-gray-600 mb-6">
+                    Полная оптимизация одной карточки товара
+                  </p>
+                  <ul className="space-y-3 text-left mb-6">
+                    <li className="flex items-start">
+                      <Icon name="Check" className="text-green-500 mr-2 mt-1 flex-shrink-0" size={20} />
+                      <span className="text-gray-700">Анализ конкурентов</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Icon name="Check" className="text-green-500 mr-2 mt-1 flex-shrink-0" size={20} />
+                      <span className="text-gray-700">Подбор ключевых слов</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Icon name="Check" className="text-green-500 mr-2 mt-1 flex-shrink-0" size={20} />
+                      <span className="text-gray-700">Оптимизация текстов</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Icon name="Check" className="text-green-500 mr-2 mt-1 flex-shrink-0" size={20} />
+                      <span className="text-gray-700">Настройка характеристик</span>
+                    </li>
+                  </ul>
+                  <Button
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white"
+                    onClick={() =>
+                      document
+                        .getElementById("contact-form")
+                        ?.scrollIntoView({ behavior: "smooth" })
+                    }
+                  >
+                    Заказать
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-gradient-to-br from-green-500 to-blue-600 text-white shadow-xl border-0 hover:shadow-2xl transition-shadow transform scale-105">
+              <CardContent className="p-8">
+                <div className="text-center">
+                  <Badge className="bg-white text-green-600 mb-4 text-xs font-bold">
+                    ВЫГОДНО
+                  </Badge>
+                  <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Icon name="Package" size={32} className="text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-2">
+                    Пакет 5 карточек
+                  </h3>
+                  <div className="text-4xl font-bold mb-2">
+                    12 000 ₽
+                  </div>
+                  <div className="text-sm opacity-90 mb-4">
+                    2400 ₽ за карточку • Экономия 3000 ₽
+                  </div>
+                  <p className="opacity-90 mb-6">
+                    Оптимизация пяти товаров по выгодной цене
+                  </p>
+                  <ul className="space-y-3 text-left mb-6">
+                    <li className="flex items-start">
+                      <Icon name="Check" className="text-white mr-2 mt-1 flex-shrink-0" size={20} />
+                      <span>Все из базового пакета</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Icon name="Check" className="text-white mr-2 mt-1 flex-shrink-0" size={20} />
+                      <span>Приоритетная обработка</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Icon name="Check" className="text-white mr-2 mt-1 flex-shrink-0" size={20} />
+                      <span>Консультация по продвижению</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Icon name="Check" className="text-white mr-2 mt-1 flex-shrink-0" size={20} />
+                      <span>Отчет по каждой карточке</span>
+                    </li>
+                  </ul>
+                  <Button
+                    className="w-full bg-white text-green-600 hover:bg-gray-100"
+                    onClick={() =>
+                      document
+                        .getElementById("contact-form")
+                        ?.scrollIntoView({ behavior: "smooth" })
+                    }
+                  >
+                    Заказать пакет
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white shadow-lg border-2 border-purple-200 hover:shadow-xl transition-shadow">
+              <CardContent className="p-8">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Icon name="Zap" size={32} className="text-purple-600" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                    10+ карточек
+                  </h3>
+                  <div className="text-4xl font-bold text-purple-600 mb-4">
+                    2000 ₽
+                  </div>
+                  <p className="text-gray-600 mb-6">
+                    Оптовая цена за каждую карточку при заказе от 10 штук
+                  </p>
+                  <ul className="space-y-3 text-left mb-6">
+                    <li className="flex items-start">
+                      <Icon name="Check" className="text-green-500 mr-2 mt-1 flex-shrink-0" size={20} />
+                      <span className="text-gray-700">Максимальная экономия</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Icon name="Check" className="text-green-500 mr-2 mt-1 flex-shrink-0" size={20} />
+                      <span className="text-gray-700">Персональный менеджер</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Icon name="Check" className="text-green-500 mr-2 mt-1 flex-shrink-0" size={20} />
+                      <span className="text-gray-700">Индивидуальная стратегия</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Icon name="Check" className="text-green-500 mr-2 mt-1 flex-shrink-0" size={20} />
+                      <span className="text-gray-700">Полный аудит ниши</span>
+                    </li>
+                  </ul>
+                  <Button
+                    className="w-full bg-purple-600 hover:bg-purple-700 text-white"
+                    onClick={() =>
+                      document
+                        .getElementById("contact-form")
+                        ?.scrollIntoView({ behavior: "smooth" })
+                    }
+                  >
+                    Обсудить проект
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* How it works Section */}
       <section id="how-it-works" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
