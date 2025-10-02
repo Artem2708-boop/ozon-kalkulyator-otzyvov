@@ -12,7 +12,7 @@ const WelcomePopup = () => {
     if (!hasSeenPopup) {
       const timer = setTimeout(() => {
         setIsOpen(true);
-      }, 1000);
+      }, 15000);
 
       return () => clearTimeout(timer);
     }
@@ -34,36 +34,46 @@ const WelcomePopup = () => {
         <DialogHeader>
           <div className="flex justify-center mb-4">
             <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-green-500 rounded-full flex items-center justify-center">
-              <Icon name="Rocket" size={32} className="text-white" />
+              <Icon name="Gift" size={32} className="text-white" />
             </div>
           </div>
           <DialogTitle className="text-center text-2xl">
-            Добро пожаловать в CUPOZON!
+            Получите уникальное предложение!
           </DialogTitle>
         </DialogHeader>
         
         <div className="space-y-4 py-4">
-          <p className="text-center text-gray-600">
-            Профессиональное продвижение товаров на маркетплейсах Ozon и Wildberries
-          </p>
+          <div className="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg p-4 border-2 border-yellow-300">
+            <div className="flex items-center justify-center mb-3">
+              <Icon name="Sparkles" size={24} className="text-yellow-600 mr-2" />
+              <h3 className="font-bold text-lg text-gray-900">
+                Специальный бонус
+              </h3>
+            </div>
+            <p className="text-center text-gray-700 font-semibold text-lg mb-2">
+              5 отзывов в подарок
+            </p>
+            <p className="text-center text-gray-600 text-sm">
+              при заказе через сайт прямо сейчас
+            </p>
+          </div>
           
           <div className="bg-gradient-to-r from-blue-50 to-green-50 rounded-lg p-4">
-            <h3 className="font-semibold text-gray-900 mb-2 flex items-center justify-center">
-              <Icon name="Star" size={20} className="text-yellow-500 mr-2" />
-              Наши преимущества:
+            <h3 className="font-semibold text-gray-900 mb-3 text-center">
+              Что вы получаете:
             </h3>
             <ul className="space-y-2 text-sm text-gray-600">
+              <li className="flex items-center">
+                <Icon name="Check" size={16} className="text-green-500 mr-2" />
+                Безопасные самовыкупы с гарантией
+              </li>
               <li className="flex items-center">
                 <Icon name="Check" size={16} className="text-green-500 mr-2" />
                 Рост продаж от 200% за 3 месяца
               </li>
               <li className="flex items-center">
                 <Icon name="Check" size={16} className="text-green-500 mr-2" />
-                Безопасные схемы работы
-              </li>
-              <li className="flex items-center">
-                <Icon name="Check" size={16} className="text-green-500 mr-2" />
-                Более 3 лет опыта
+                Более 10000 реальных аккаунтов
               </li>
             </ul>
           </div>
