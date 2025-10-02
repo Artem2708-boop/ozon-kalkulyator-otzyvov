@@ -1758,8 +1758,9 @@ const Index = () => {
       </section>
 
       {/* Savings Calculator Section */}
-      <section className="py-20 bg-gradient-to-r from-green-50 to-blue-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 relative overflow-hidden" style={{ backgroundImage: "url('/img/c6743b3f-088d-44a9-8af5-16d75977e311.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}>
+        <div className="absolute inset-0 bg-white/90"></div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12">
             <Badge className="bg-green-100 text-green-700 mb-4">
               Официальная работа
@@ -1768,7 +1769,7 @@ const Index = () => {
               Работаем по договору от 5000 ₽
             </h2>
             <p className="text-xl text-gray-600">
-              Посчитайте, сколько вы сэкономите на самовыкупах, оплачивая через расчётный счёт
+              Посчитайте, сколько вы сэкономите на налогах, оплачивая через агентский договор
             </p>
           </div>
 
@@ -1781,26 +1782,30 @@ const Index = () => {
                       <Icon name="FileText" size={24} className="text-green-600" />
                     </div>
                     <h3 className="text-2xl font-bold text-gray-900">
-                      Экономия 15% по договору
+                      Экономия до 15% на налогах
                     </h3>
                   </div>
                   
                   <ul className="space-y-3 mb-6">
                     <li className="flex items-start">
                       <Icon name="Check" className="text-green-500 mr-3 mt-1 flex-shrink-0" size={20} />
-                      <span className="text-gray-700">Официальный договор на оказание услуг</span>
+                      <span className="text-gray-700">Агентский договор на оказание услуг</span>
                     </li>
                     <li className="flex items-start">
                       <Icon name="Check" className="text-green-500 mr-3 mt-1 flex-shrink-0" size={20} />
-                      <span className="text-gray-700">Оплата через расчётный счёт без НДС</span>
+                      <span className="text-gray-700">Бюджет на выкуп переводится по агентскому договору</span>
                     </li>
                     <li className="flex items-start">
                       <Icon name="Check" className="text-green-500 mr-3 mt-1 flex-shrink-0" size={20} />
-                      <span className="text-gray-700">Экономия 15% от стоимости услуг</span>
+                      <span className="text-gray-700">Экономия до 15% за счёт списания налогов</span>
                     </li>
                     <li className="flex items-start">
                       <Icon name="Check" className="text-green-500 mr-3 mt-1 flex-shrink-0" size={20} />
-                      <span className="text-gray-700">Закрывающие документы для бухгалтерии</span>
+                      <span className="text-gray-700">Обоснование расходной части для налоговой</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Icon name="Check" className="text-green-500 mr-3 mt-1 flex-shrink-0" size={20} />
+                      <span className="text-gray-700">Закрывающие документы: акты, счета, УПД</span>
                     </li>
                   </ul>
                 </div>
@@ -1862,10 +1867,10 @@ const Index = () => {
               <div className="bg-gradient-to-r from-blue-600 to-green-500 rounded-xl p-6 text-white text-center">
                 <div className="flex items-center justify-center gap-3 mb-3">
                   <Icon name="Award" size={32} className="text-white" />
-                  <h4 className="text-2xl font-bold">Почему выгодно работать по договору?</h4>
+                  <h4 className="text-2xl font-bold">Почему выгодно работать по агентскому договору?</h4>
                 </div>
                 <p className="text-blue-100 text-lg">
-                  Оплачивая услуги через расчётный счёт, вы получаете скидку 15% + все необходимые документы для отчётности
+                  Оплачивая через расчётный счёт, вы сможете обосновать расходную часть и списать до 15% на налогах + получите все закрывающие документы
                 </p>
               </div>
 
