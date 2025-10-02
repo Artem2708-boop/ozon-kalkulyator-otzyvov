@@ -268,10 +268,9 @@ const Index = () => {
                 Профессиональные услуги самовыкупов
               </Badge>
               <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                Увеличьте рейтинг товаров на
+                Первый и единственный сервис безопасного самовыкупа на OZON{" "}
                 <span className="bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent">
-                  {" "}
-                  Озоне
+                  с официальной гарантией защиты от штрафов
                 </span>
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
