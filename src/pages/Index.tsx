@@ -1757,6 +1757,136 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Savings Calculator Section */}
+      <section className="py-20 bg-gradient-to-r from-green-50 to-blue-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <Badge className="bg-green-100 text-green-700 mb-4">
+              Официальная работа
+            </Badge>
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              Работаем по договору от 5000 ₽
+            </h2>
+            <p className="text-xl text-gray-600">
+              Посчитайте, сколько вы сэкономите на самовыкупах, оплачивая через расчётный счёт
+            </p>
+          </div>
+
+          <Card className="bg-white shadow-2xl border-0">
+            <CardContent className="p-8 lg:p-12">
+              <div className="grid md:grid-cols-2 gap-8 items-center mb-8">
+                <div>
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                      <Icon name="FileText" size={24} className="text-green-600" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900">
+                      Экономия 15% по договору
+                    </h3>
+                  </div>
+                  
+                  <ul className="space-y-3 mb-6">
+                    <li className="flex items-start">
+                      <Icon name="Check" className="text-green-500 mr-3 mt-1 flex-shrink-0" size={20} />
+                      <span className="text-gray-700">Официальный договор на оказание услуг</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Icon name="Check" className="text-green-500 mr-3 mt-1 flex-shrink-0" size={20} />
+                      <span className="text-gray-700">Оплата через расчётный счёт без НДС</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Icon name="Check" className="text-green-500 mr-3 mt-1 flex-shrink-0" size={20} />
+                      <span className="text-gray-700">Экономия 15% от стоимости услуг</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Icon name="Check" className="text-green-500 mr-3 mt-1 flex-shrink-0" size={20} />
+                      <span className="text-gray-700">Закрывающие документы для бухгалтерии</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="bg-gradient-to-br from-blue-50 to-green-50 rounded-2xl p-6 border-2 border-blue-200">
+                  <h4 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
+                    <Icon name="Calculator" size={24} className="text-blue-600 mr-2" />
+                    Калькулятор экономии
+                  </h4>
+                  
+                  <div className="mb-6">
+                    <Label htmlFor="amount" className="text-gray-700 font-semibold mb-2 block">
+                      Введите сумму заказа (от 5000 ₽):
+                    </Label>
+                    <Input
+                      id="amount"
+                      type="number"
+                      placeholder="Например: 10000"
+                      min="5000"
+                      className="text-lg p-6 border-2 border-blue-300 focus:border-blue-500"
+                      onChange={(e) => {
+                        const amount = Number(e.target.value);
+                        const savings = Math.round(amount * 0.15);
+                        const savingsElement = document.getElementById("savings-result");
+                        if (savingsElement) {
+                          if (amount >= 5000) {
+                            savingsElement.innerHTML = `
+                              <div class="text-center">
+                                <div class="text-sm text-gray-600 mb-2">Ваша экономия:</div>
+                                <div class="text-4xl font-bold text-green-600 mb-2">${savings.toLocaleString('ru-RU')} ₽</div>
+                                <div class="text-sm text-gray-600">15% от ${amount.toLocaleString('ru-RU')} ₽</div>
+                              </div>
+                            `;
+                          } else if (amount > 0) {
+                            savingsElement.innerHTML = `
+                              <div class="text-center text-sm text-orange-600">
+                                Минимальная сумма для работы по договору — 5000 ₽
+                              </div>
+                            `;
+                          } else {
+                            savingsElement.innerHTML = "";
+                          }
+                        }
+                      }}
+                    />
+                  </div>
+
+                  <div 
+                    id="savings-result" 
+                    className="bg-white rounded-lg p-6 min-h-[120px] flex items-center justify-center border-2 border-dashed border-gray-300"
+                  >
+                    <p className="text-gray-400 text-center">
+                      Введите сумму для расчёта экономии
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-r from-blue-600 to-green-500 rounded-xl p-6 text-white text-center">
+                <div className="flex items-center justify-center gap-3 mb-3">
+                  <Icon name="Award" size={32} className="text-white" />
+                  <h4 className="text-2xl font-bold">Почему выгодно работать по договору?</h4>
+                </div>
+                <p className="text-blue-100 text-lg">
+                  Оплачивая услуги через расчётный счёт, вы получаете скидку 15% + все необходимые документы для отчётности
+                </p>
+              </div>
+
+              <div className="mt-8 text-center">
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white px-12 py-6 text-lg font-bold"
+                  onClick={() => window.open("https://t.me/cupozon_mp", "_blank")}
+                >
+                  <Icon name="FileSignature" size={24} className="mr-3" />
+                  Заключить договор
+                </Button>
+                <p className="text-sm text-gray-500 mt-3">
+                  Подготовим договор в течение 1 рабочего дня
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
       {/* How it works Section */}
       <section id="how-it-works" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
