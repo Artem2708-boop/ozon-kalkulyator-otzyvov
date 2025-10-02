@@ -265,17 +265,16 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in">
               <Badge className="bg-blue-100 text-blue-700 mb-6">
-                Профессиональные услуги самовыкупов
+                Безопасные самовыкупы на OZON
               </Badge>
-              <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                Первый и единственный сервис безопасного самовыкупа на OZON{" "}
+              <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                Безопасный самовыкуп на OZON{" "}
                 <span className="bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent">
-                  с официальной гарантией защиты от штрафов
+                  с гарантией защиты от штрафов
                 </span>
               </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Профессиональные услуги самовыкупов и накрутки отзывов для
-                повышения позиций ваших товаров в поисковой выдаче маркетплейса
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                Увеличьте продажи и рейтинг товаров без риска блокировки
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
