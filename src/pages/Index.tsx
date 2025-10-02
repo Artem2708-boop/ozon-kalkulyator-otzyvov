@@ -1540,6 +1540,80 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Founder Section */}
+      <section className="py-20 bg-gradient-to-br from-blue-50 to-green-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
+            <div className="grid md:grid-cols-5 gap-0">
+              <div className="md:col-span-2 bg-gradient-to-br from-blue-600 to-green-500 p-8 flex items-center justify-center">
+                <div className="text-center">
+                  <div className="relative inline-block mb-6">
+                    <img
+                      src="https://cdn.poehali.dev/files/d657736a-6b4d-4cce-9598-3577e87a0f8c.jpg"
+                      alt="Артем Асриев"
+                      className="w-48 h-48 rounded-full object-cover border-4 border-white shadow-xl"
+                    />
+                    <div className="absolute -bottom-2 -right-2 w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg">
+                      <Icon name="Award" size={32} className="text-blue-600" />
+                    </div>
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">
+                    Артем Асриев
+                  </h3>
+                  <p className="text-blue-100 text-lg">
+                    Основатель CUPOZON
+                  </p>
+                </div>
+              </div>
+
+              <div className="md:col-span-3 p-8 lg:p-12">
+                <div className="mb-6">
+                  <Icon name="Quote" size={40} className="text-blue-600 opacity-50 mb-4" />
+                  <blockquote className="text-xl lg:text-2xl font-semibold text-gray-800 italic mb-6">
+                    "Отзывы — это не просто цифры, это мост доверия между продавцом и покупателем"
+                  </blockquote>
+                </div>
+
+                <div className="space-y-4 text-gray-600 leading-relaxed">
+                  <p>
+                    Я сам являюсь <span className="font-semibold text-gray-900">действующим селлером</span> на маркетплейсах, 
+                    поэтому точно знаю, как работают самовыкупы и какую реальную пользу они приносят бизнесу.
+                  </p>
+                  
+                  <p>
+                    За годы работы я понял: <span className="font-semibold text-gray-900">отзывы дают большую конверсию в заказ и продажи</span>, 
+                    чем любой другой инструмент продвижения. Это главный фактор принятия решения о покупке.
+                  </p>
+                  
+                  <p>
+                    При наличии <span className="font-semibold text-gray-900">грамотных отзывов</span> мы можем объяснить покупателю 
+                    качество и преимущества товара так, как не сможет ни одно описание или фото. Именно поэтому я создал CUPOZON — 
+                    сервис, который помогает селлерам получить эти критически важные отзывы безопасно и эффективно.
+                  </p>
+                </div>
+
+                <div className="mt-8 pt-6 border-t border-gray-200">
+                  <div className="flex flex-wrap gap-4">
+                    <div className="flex items-center">
+                      <Icon name="CheckCircle" className="text-green-500 mr-2" size={20} />
+                      <span className="text-sm text-gray-600">3+ года на маркетплейсах</span>
+                    </div>
+                    <div className="flex items-center">
+                      <Icon name="CheckCircle" className="text-green-500 mr-2" size={20} />
+                      <span className="text-sm text-gray-600">Действующий селлер</span>
+                    </div>
+                    <div className="flex items-center">
+                      <Icon name="CheckCircle" className="text-green-500 mr-2" size={20} />
+                      <span className="text-sm text-gray-600">500+ успешных кейсов</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* How it works Section */}
       <section id="how-it-works" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
