@@ -287,45 +287,29 @@ const Index = () => {
                   <span>Уникальные методы оплаты для каждого выкупа</span>
                 </p>
               </div>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col gap-5 mt-8">
                 <Button
                   size="lg"
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4"
+                  className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-14 py-7 text-xl font-bold shadow-xl hover:shadow-2xl transition-all transform hover:scale-105"
                   onClick={() =>
                     document
                       .getElementById("calculator")
                       ?.scrollIntoView({ behavior: "smooth" })
                   }
                 >
-                  <Icon name="Calculator" size={20} className="mr-2" />
+                  <Icon name="Calculator" size={28} className="mr-3" />
                   Рассчитать отзывы
                 </Button>
                 <Button
                   size="lg"
-                  variant="outline"
-                  className="border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-4"
-                  onClick={() =>
-                    document
-                      .getElementById("how-it-works")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
-                >
-                  <Icon name="Play" size={20} className="mr-2" />
-                  Как это работает
-                </Button>
-              </div>
-
-              <div className="mt-6">
-                <Button
-                  size="lg"
-                  className="bg-green-500 hover:bg-green-600 text-white px-12 py-6 text-lg font-semibold w-full sm:w-auto"
+                  className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-14 py-7 text-xl font-bold shadow-xl hover:shadow-2xl transition-all transform hover:scale-105"
                   onClick={() =>
                     document
                       .getElementById("contact-form")
                       ?.scrollIntoView({ behavior: "smooth" })
                   }
                 >
-                  <Icon name="ShoppingCart" size={24} className="mr-3" />
+                  <Icon name="ShoppingCart" size={28} className="mr-3" />
                   Заказать отзывы
                 </Button>
               </div>
