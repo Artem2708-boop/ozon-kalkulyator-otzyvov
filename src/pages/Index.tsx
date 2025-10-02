@@ -885,6 +885,296 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Cases Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <Badge className="bg-green-100 text-green-700 mb-4">
+              Реальные кейсы
+            </Badge>
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              Примеры наших работ
+            </h2>
+            <p className="text-xl text-gray-600">
+              Как мы помогли продавцам выйти в ТОП
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="bg-white shadow-lg border-0 hover:shadow-xl transition-shadow overflow-hidden">
+              <div className="aspect-square bg-gray-100 flex items-center justify-center p-4">
+                <img
+                  src="/img/c61aef13-7b5b-4baa-bc5d-d70aadbd7a1f.jpg"
+                  alt="Женское худи"
+                  className="w-full h-full object-cover rounded-lg"
+                />
+              </div>
+              <CardContent className="p-4">
+                <h3 className="font-bold text-lg mb-2">Женское худи</h3>
+                <div className="bg-green-50 rounded-lg p-3 mb-3">
+                  <p className="text-sm font-semibold text-green-700 mb-2">
+                    С 10 страницы → ТОП 10
+                  </p>
+                </div>
+                <ul className="space-y-1 text-sm text-gray-600 mb-3">
+                  <li className="flex items-center">
+                    <Icon name="Clock" size={14} className="text-blue-500 mr-2" />
+                    <span>7 дней на самовыкупы</span>
+                  </li>
+                  <li className="flex items-center">
+                    <Icon name="ShoppingCart" size={14} className="text-blue-500 mr-2" />
+                    <span>70 самовыкупов</span>
+                  </li>
+                </ul>
+                <div className="pt-3 border-t">
+                  <p className="text-sm text-gray-500">Бюджет:</p>
+                  <p className="text-xl font-bold text-blue-600">10 500 ₽</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white shadow-lg border-0 hover:shadow-xl transition-shadow overflow-hidden">
+              <div className="aspect-square bg-gray-100 flex items-center justify-center p-4">
+                <img
+                  src="/img/c3b35aec-4828-4105-be64-d8cb9970cbc9.jpg"
+                  alt="Беспроводные наушники"
+                  className="w-full h-full object-cover rounded-lg"
+                />
+              </div>
+              <CardContent className="p-4">
+                <h3 className="font-bold text-lg mb-2">Беспроводные наушники</h3>
+                <div className="bg-green-50 rounded-lg p-3 mb-3">
+                  <p className="text-sm font-semibold text-green-700 mb-2">
+                    С 15 страницы → ТОП 5
+                  </p>
+                </div>
+                <ul className="space-y-1 text-sm text-gray-600 mb-3">
+                  <li className="flex items-center">
+                    <Icon name="Clock" size={14} className="text-blue-500 mr-2" />
+                    <span>10 дней на самовыкупы</span>
+                  </li>
+                  <li className="flex items-center">
+                    <Icon name="ShoppingCart" size={14} className="text-blue-500 mr-2" />
+                    <span>120 самовыкупов</span>
+                  </li>
+                </ul>
+                <div className="pt-3 border-t">
+                  <p className="text-sm text-gray-500">Бюджет:</p>
+                  <p className="text-xl font-bold text-blue-600">18 000 ₽</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white shadow-lg border-0 hover:shadow-xl transition-shadow overflow-hidden">
+              <div className="aspect-square bg-gray-100 flex items-center justify-center p-4">
+                <img
+                  src="/img/6d858fbb-ea63-4518-8995-6f2bca144247.jpg"
+                  alt="Кожаный кошелек"
+                  className="w-full h-full object-cover rounded-lg"
+                />
+              </div>
+              <CardContent className="p-4">
+                <h3 className="font-bold text-lg mb-2">Кожаный кошелек</h3>
+                <div className="bg-green-50 rounded-lg p-3 mb-3">
+                  <p className="text-sm font-semibold text-green-700 mb-2">
+                    С 8 страницы → ТОП 3
+                  </p>
+                </div>
+                <ul className="space-y-1 text-sm text-gray-600 mb-3">
+                  <li className="flex items-center">
+                    <Icon name="Clock" size={14} className="text-blue-500 mr-2" />
+                    <span>5 дней на самовыкупы</span>
+                  </li>
+                  <li className="flex items-center">
+                    <Icon name="ShoppingCart" size={14} className="text-blue-500 mr-2" />
+                    <span>50 самовыкупов</span>
+                  </li>
+                </ul>
+                <div className="pt-3 border-t">
+                  <p className="text-sm text-gray-500">Бюджет:</p>
+                  <p className="text-xl font-bold text-blue-600">7 500 ₽</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white shadow-lg border-0 hover:shadow-xl transition-shadow overflow-hidden">
+              <div className="aspect-square bg-gray-100 flex items-center justify-center p-4">
+                <img
+                  src="/img/e6b978dd-6098-43a5-8c90-7754f4c62c26.jpg"
+                  alt="Спортивная бутылка"
+                  className="w-full h-full object-cover rounded-lg"
+                />
+              </div>
+              <CardContent className="p-4">
+                <h3 className="font-bold text-lg mb-2">Спортивная бутылка</h3>
+                <div className="bg-green-50 rounded-lg p-3 mb-3">
+                  <p className="text-sm font-semibold text-green-700 mb-2">
+                    С 12 страницы → ТОП 7
+                  </p>
+                </div>
+                <ul className="space-y-1 text-sm text-gray-600 mb-3">
+                  <li className="flex items-center">
+                    <Icon name="Clock" size={14} className="text-blue-500 mr-2" />
+                    <span>6 дней на самовыкупы</span>
+                  </li>
+                  <li className="flex items-center">
+                    <Icon name="ShoppingCart" size={14} className="text-blue-500 mr-2" />
+                    <span>60 самовыкупов</span>
+                  </li>
+                </ul>
+                <div className="pt-3 border-t">
+                  <p className="text-sm text-gray-500">Бюджет:</p>
+                  <p className="text-xl font-bold text-blue-600">9 000 ₽</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white shadow-lg border-0 hover:shadow-xl transition-shadow overflow-hidden">
+              <div className="aspect-square bg-gray-100 flex items-center justify-center p-4">
+                <img
+                  src="/img/e844273c-8e60-4e2b-899f-96403f13bd55.jpg"
+                  alt="Чехол для телефона"
+                  className="w-full h-full object-cover rounded-lg"
+                />
+              </div>
+              <CardContent className="p-4">
+                <h3 className="font-bold text-lg mb-2">Чехол для телефона</h3>
+                <div className="bg-green-50 rounded-lg p-3 mb-3">
+                  <p className="text-sm font-semibold text-green-700 mb-2">
+                    С 20 страницы → ТОП 15
+                  </p>
+                </div>
+                <ul className="space-y-1 text-sm text-gray-600 mb-3">
+                  <li className="flex items-center">
+                    <Icon name="Clock" size={14} className="text-blue-500 mr-2" />
+                    <span>8 дней на самовыкупы</span>
+                  </li>
+                  <li className="flex items-center">
+                    <Icon name="ShoppingCart" size={14} className="text-blue-500 mr-2" />
+                    <span>80 самовыкупов</span>
+                  </li>
+                </ul>
+                <div className="pt-3 border-t">
+                  <p className="text-sm text-gray-500">Бюджет:</p>
+                  <p className="text-xl font-bold text-blue-600">12 000 ₽</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white shadow-lg border-0 hover:shadow-xl transition-shadow overflow-hidden">
+              <div className="aspect-square bg-gray-100 flex items-center justify-center p-4">
+                <img
+                  src="/img/a558d1b1-87a3-4702-9977-aaa9881fb132.jpg"
+                  alt="Детский рюкзак"
+                  className="w-full h-full object-cover rounded-lg"
+                />
+              </div>
+              <CardContent className="p-4">
+                <h3 className="font-bold text-lg mb-2">Детский рюкзак</h3>
+                <div className="bg-green-50 rounded-lg p-3 mb-3">
+                  <p className="text-sm font-semibold text-green-700 mb-2">
+                    С 7 страницы → ТОП 5
+                  </p>
+                </div>
+                <ul className="space-y-1 text-sm text-gray-600 mb-3">
+                  <li className="flex items-center">
+                    <Icon name="Clock" size={14} className="text-blue-500 mr-2" />
+                    <span>9 дней на самовыкупы</span>
+                  </li>
+                  <li className="flex items-center">
+                    <Icon name="ShoppingCart" size={14} className="text-blue-500 mr-2" />
+                    <span>90 самовыкупов</span>
+                  </li>
+                </ul>
+                <div className="pt-3 border-t">
+                  <p className="text-sm text-gray-500">Бюджет:</p>
+                  <p className="text-xl font-bold text-blue-600">13 500 ₽</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white shadow-lg border-0 hover:shadow-xl transition-shadow overflow-hidden">
+              <div className="aspect-square bg-gray-100 flex items-center justify-center p-4">
+                <img
+                  src="/img/60477d8f-ae31-4605-b7a4-769da498dfd5.jpg"
+                  alt="Настольная лампа"
+                  className="w-full h-full object-cover rounded-lg"
+                />
+              </div>
+              <CardContent className="p-4">
+                <h3 className="font-bold text-lg mb-2">Настольная лампа</h3>
+                <div className="bg-green-50 rounded-lg p-3 mb-3">
+                  <p className="text-sm font-semibold text-green-700 mb-2">
+                    С 9 страницы → ТОП 6
+                  </p>
+                </div>
+                <ul className="space-y-1 text-sm text-gray-600 mb-3">
+                  <li className="flex items-center">
+                    <Icon name="Clock" size={14} className="text-blue-500 mr-2" />
+                    <span>7 дней на самовыкупы</span>
+                  </li>
+                  <li className="flex items-center">
+                    <Icon name="ShoppingCart" size={14} className="text-blue-500 mr-2" />
+                    <span>65 самовыкупов</span>
+                  </li>
+                </ul>
+                <div className="pt-3 border-t">
+                  <p className="text-sm text-gray-500">Бюджет:</p>
+                  <p className="text-xl font-bold text-blue-600">9 750 ₽</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white shadow-lg border-0 hover:shadow-xl transition-shadow overflow-hidden">
+              <div className="aspect-square bg-gray-100 flex items-center justify-center p-4">
+                <img
+                  src="/img/1671aaf5-98c3-4250-a73c-471224849d53.jpg"
+                  alt="Набор ножей"
+                  className="w-full h-full object-cover rounded-lg"
+                />
+              </div>
+              <CardContent className="p-4">
+                <h3 className="font-bold text-lg mb-2">Набор ножей</h3>
+                <div className="bg-green-50 rounded-lg p-3 mb-3">
+                  <p className="text-sm font-semibold text-green-700 mb-2">
+                    С 11 страницы → ТОП 4
+                  </p>
+                </div>
+                <ul className="space-y-1 text-sm text-gray-600 mb-3">
+                  <li className="flex items-center">
+                    <Icon name="Clock" size={14} className="text-blue-500 mr-2" />
+                    <span>12 дней на самовыкупы</span>
+                  </li>
+                  <li className="flex items-center">
+                    <Icon name="ShoppingCart" size={14} className="text-blue-500 mr-2" />
+                    <span>100 самовыкупов</span>
+                  </li>
+                </ul>
+                <div className="pt-3 border-t">
+                  <p className="text-sm text-gray-500">Бюджет:</p>
+                  <p className="text-xl font-bold text-blue-600">15 000 ₽</p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="mt-12 text-center">
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-blue-600 to-green-500 hover:from-blue-700 hover:to-green-600 text-white px-12 py-6 text-lg font-semibold"
+              onClick={() =>
+                document
+                  .getElementById("contact-form")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              <Icon name="Rocket" size={24} className="mr-3" />
+              Хочу такой же результат
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Pricing Section */}
       <section
         id="pricing"
