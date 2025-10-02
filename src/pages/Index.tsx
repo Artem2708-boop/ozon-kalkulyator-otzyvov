@@ -290,18 +290,6 @@ const Index = () => {
               <div className="flex flex-col gap-5 mt-8">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-14 py-7 text-xl font-bold shadow-xl hover:shadow-2xl transition-all transform hover:scale-105"
-                  onClick={() =>
-                    document
-                      .getElementById("calculator")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
-                >
-                  <Icon name="Calculator" size={28} className="mr-3" />
-                  Рассчитать отзывы
-                </Button>
-                <Button
-                  size="lg"
                   className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-14 py-7 text-xl font-bold shadow-xl hover:shadow-2xl transition-all transform hover:scale-105"
                   onClick={() =>
                     document
@@ -311,6 +299,18 @@ const Index = () => {
                 >
                   <Icon name="ShoppingCart" size={28} className="mr-3" />
                   Заказать отзывы
+                </Button>
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-14 py-7 text-xl font-bold shadow-xl hover:shadow-2xl transition-all transform hover:scale-105"
+                  onClick={() =>
+                    document
+                      .getElementById("calculator")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
+                >
+                  <Icon name="Calculator" size={28} className="mr-3" />
+                  Калькулятор оценок
                 </Button>
               </div>
             </div>
