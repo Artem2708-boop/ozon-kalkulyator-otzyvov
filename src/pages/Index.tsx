@@ -332,8 +332,8 @@ const Index = () => {
             </div>
             <div className="animate-scale-in">
               <img
-                src="/img/c0bed09e-a26f-4d8a-b7e5-4c66ccd951b4.jpg"
-                alt="Ozon marketplace services"
+                src="/img/d791fa57-47e6-4cf5-aa0d-49c1263127c1.jpg"
+                alt="Рост продаж и отзывов на маркетплейсах"
                 className="w-full h-auto rounded-2xl shadow-2xl"
               />
             </div>
