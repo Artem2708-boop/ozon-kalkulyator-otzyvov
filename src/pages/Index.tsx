@@ -1593,7 +1593,7 @@ const Index = () => {
                 </div>
 
                 <div className="mt-8 pt-6 border-t border-gray-200">
-                  <div className="flex flex-wrap gap-4">
+                  <div className="flex flex-wrap gap-4 mb-6">
                     <div className="flex items-center">
                       <Icon name="CheckCircle" className="text-green-500 mr-2" size={20} />
                       <span className="text-sm text-gray-600">3+ года на маркетплейсах</span>
@@ -1607,6 +1607,15 @@ const Index = () => {
                       <span className="text-sm text-gray-600">500+ успешных кейсов</span>
                     </div>
                   </div>
+
+                  <Button
+                    size="lg"
+                    className="bg-gradient-to-r from-blue-600 to-green-500 hover:from-blue-700 hover:to-green-600 text-white w-full sm:w-auto"
+                    onClick={() => window.open("http://t.me/artemasriev777", "_blank")}
+                  >
+                    <Icon name="Send" size={20} className="mr-2" />
+                    Связаться с основателем
+                  </Button>
                 </div>
               </div>
             </div>
