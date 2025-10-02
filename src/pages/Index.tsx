@@ -1623,6 +1623,152 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Managers Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <Badge className="bg-blue-100 text-blue-700 mb-4">
+              Личная поддержка
+            </Badge>
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              Ваши помощники 24/7
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Менеджеры, которые считают и помогают выкупать ваши товары, а не роботы или онлайн-сайты где вы оставляете заявку
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <Card className="bg-white shadow-xl border-0 hover:shadow-2xl transition-shadow overflow-hidden">
+              <CardContent className="p-0">
+                <div className="bg-gradient-to-r from-purple-500 to-pink-500 p-6">
+                  <div className="flex items-center gap-6">
+                    <img
+                      src="/img/81459f98-e624-4f00-984a-c8c4d732e078.jpg"
+                      alt="Менеджер Татьяна"
+                      className="w-24 h-24 rounded-full object-cover border-4 border-white shadow-lg"
+                    />
+                    <div className="text-white">
+                      <h3 className="text-2xl font-bold mb-1">Татьяна</h3>
+                      <p className="text-purple-100">Старший менеджер</p>
+                      <div className="flex items-center mt-2">
+                        <Icon name="Star" size={16} className="text-yellow-300 mr-1" />
+                        <Icon name="Star" size={16} className="text-yellow-300 mr-1" />
+                        <Icon name="Star" size={16} className="text-yellow-300 mr-1" />
+                        <Icon name="Star" size={16} className="text-yellow-300 mr-1" />
+                        <Icon name="Star" size={16} className="text-yellow-300" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="p-6">
+                  <div className="mb-6">
+                    <Icon name="Quote" size={32} className="text-purple-500 opacity-50 mb-3" />
+                    <blockquote className="text-gray-700 italic leading-relaxed">
+                      "Самовыкупы — это отдельный мир, где мы являемся проводниками. 
+                      Моя цель, чтобы у вас всё получилось, и я помогу вам на каждом этапе"
+                    </blockquote>
+                  </div>
+
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-center text-sm text-gray-600">
+                      <Icon name="CheckCircle" className="text-green-500 mr-2" size={16} />
+                      <span>Персональное сопровождение</span>
+                    </div>
+                    <div className="flex items-center text-sm text-gray-600">
+                      <Icon name="CheckCircle" className="text-green-500 mr-2" size={16} />
+                      <span>Помощь в расчетах и стратегии</span>
+                    </div>
+                    <div className="flex items-center text-sm text-gray-600">
+                      <Icon name="CheckCircle" className="text-green-500 mr-2" size={16} />
+                      <span>Ответы 24/7</span>
+                    </div>
+                  </div>
+
+                  <Button
+                    className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white"
+                    size="lg"
+                    onClick={() => window.open("https://t.me/cupozon_mp", "_blank")}
+                  >
+                    <Icon name="MessageCircle" size={20} className="mr-2" />
+                    Связаться с Татьяной
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white shadow-xl border-0 hover:shadow-2xl transition-shadow overflow-hidden">
+              <CardContent className="p-0">
+                <div className="bg-gradient-to-r from-blue-500 to-cyan-500 p-6">
+                  <div className="flex items-center gap-6">
+                    <img
+                      src="/img/cba606ad-c9f8-4dce-a1ce-9c97f2dbb5b8.jpg"
+                      alt="Менеджер Артур"
+                      className="w-24 h-24 rounded-full object-cover border-4 border-white shadow-lg"
+                    />
+                    <div className="text-white">
+                      <h3 className="text-2xl font-bold mb-1">Артур</h3>
+                      <p className="text-blue-100">Менеджер по работе с клиентами</p>
+                      <div className="flex items-center mt-2">
+                        <Icon name="Star" size={16} className="text-yellow-300 mr-1" />
+                        <Icon name="Star" size={16} className="text-yellow-300 mr-1" />
+                        <Icon name="Star" size={16} className="text-yellow-300 mr-1" />
+                        <Icon name="Star" size={16} className="text-yellow-300 mr-1" />
+                        <Icon name="Star" size={16} className="text-yellow-300" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="p-6">
+                  <div className="mb-6">
+                    <Icon name="Quote" size={32} className="text-blue-500 opacity-50 mb-3" />
+                    <blockquote className="text-gray-700 italic leading-relaxed">
+                      "Каждый клиент уникален, и я подбираю индивидуальную стратегию продвижения. 
+                      Вместе мы достигнем ваших целей на маркетплейсах"
+                    </blockquote>
+                  </div>
+
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-center text-sm text-gray-600">
+                      <Icon name="CheckCircle" className="text-green-500 mr-2" size={16} />
+                      <span>Индивидуальный подход</span>
+                    </div>
+                    <div className="flex items-center text-sm text-gray-600">
+                      <Icon name="CheckCircle" className="text-green-500 mr-2" size={16} />
+                      <span>Консультации по продвижению</span>
+                    </div>
+                    <div className="flex items-center text-sm text-gray-600">
+                      <Icon name="CheckCircle" className="text-green-500 mr-2" size={16} />
+                      <span>Быстрая обратная связь</span>
+                    </div>
+                  </div>
+
+                  <Button
+                    className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white"
+                    size="lg"
+                    onClick={() => window.open("https://t.me/cupozon_mpartur", "_blank")}
+                  >
+                    <Icon name="MessageCircle" size={20} className="mr-2" />
+                    Связаться с Артуром
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="mt-12 text-center">
+            <div className="inline-flex items-center gap-3 bg-green-50 rounded-full px-6 py-3">
+              <Icon name="Users" className="text-green-600" size={24} />
+              <p className="text-green-800 font-semibold">
+                Живые люди, а не боты — вот что отличает нас от конкурентов
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* How it works Section */}
       <section id="how-it-works" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
