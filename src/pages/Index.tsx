@@ -2206,6 +2206,141 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Referral Program Section */}
+      <section className="py-20 relative overflow-hidden" style={{ backgroundImage: "url('/img/87072a96-8cb0-419a-b2c1-0d00f38c5561.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}>
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-900/90 to-pink-900/90"></div>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-12">
+            <Badge className="bg-yellow-400 text-purple-900 mb-4 text-base px-4 py-2">
+              💰 Зарабатывайте с нами
+            </Badge>
+            <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">
+              Реферальная программа
+            </h2>
+            <p className="text-xl lg:text-2xl text-purple-100 max-w-3xl mx-auto leading-relaxed">
+              Рекомендуйте нас своим друзьям и знакомым и получайте денежное вознаграждение или бесплатные самовыкупы
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <Card className="bg-white/95 backdrop-blur-sm shadow-2xl border-0 transform hover:scale-105 transition-transform">
+              <CardContent className="p-8">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center">
+                    <Icon name="DollarSign" size={32} className="text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900">
+                    Денежное вознаграждение
+                  </h3>
+                </div>
+                
+                <ul className="space-y-4">
+                  <li className="flex items-start">
+                    <Icon name="CheckCircle" className="text-green-500 mr-3 mt-1 flex-shrink-0" size={24} />
+                    <span className="text-gray-700 text-lg">Получайте <span className="font-bold text-purple-700">процент от каждого заказа</span> вашего реферала</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Icon name="CheckCircle" className="text-green-500 mr-3 mt-1 flex-shrink-0" size={24} />
+                    <span className="text-gray-700 text-lg">Выплаты <span className="font-bold text-purple-700">на карту или счёт</span> каждый месяц</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Icon name="CheckCircle" className="text-green-500 mr-3 mt-1 flex-shrink-0" size={24} />
+                    <span className="text-gray-700 text-lg">Чем больше рефералов — <span className="font-bold text-purple-700">тем выше процент</span></span>
+                  </li>
+                  <li className="flex items-start">
+                    <Icon name="CheckCircle" className="text-green-500 mr-3 mt-1 flex-shrink-0" size={24} />
+                    <span className="text-gray-700 text-lg"><span className="font-bold text-purple-700">Пожизненные</span> начисления с каждого заказа</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white/95 backdrop-blur-sm shadow-2xl border-0 transform hover:scale-105 transition-transform">
+              <CardContent className="p-8">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-r from-green-400 to-blue-500 rounded-full flex items-center justify-center">
+                    <Icon name="Gift" size={32} className="text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900">
+                    Бесплатные самовыкупы
+                  </h3>
+                </div>
+                
+                <ul className="space-y-4">
+                  <li className="flex items-start">
+                    <Icon name="CheckCircle" className="text-green-500 mr-3 mt-1 flex-shrink-0" size={24} />
+                    <span className="text-gray-700 text-lg">Обменивайте бонусы на <span className="font-bold text-purple-700">бесплатные выкупы</span></span>
+                  </li>
+                  <li className="flex items-start">
+                    <Icon name="CheckCircle" className="text-green-500 mr-3 mt-1 flex-shrink-0" size={24} />
+                    <span className="text-gray-700 text-lg">Один реферал = <span className="font-bold text-purple-700">скидка на ваши услуги</span></span>
+                  </li>
+                  <li className="flex items-start">
+                    <Icon name="CheckCircle" className="text-green-500 mr-3 mt-1 flex-shrink-0" size={24} />
+                    <span className="text-gray-700 text-lg">Накопительная система — <span className="font-bold text-purple-700">бонусы не сгорают</span></span>
+                  </li>
+                  <li className="flex items-start">
+                    <Icon name="CheckCircle" className="text-green-500 mr-3 mt-1 flex-shrink-0" size={24} />
+                    <span className="text-gray-700 text-lg">Комбинируйте с другими <span className="font-bold text-purple-700">акциями и скидками</span></span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+
+          <Card className="bg-gradient-to-r from-yellow-400 via-orange-400 to-pink-500 shadow-2xl border-0">
+            <CardContent className="p-10">
+              <div className="text-center">
+                <div className="flex items-center justify-center gap-4 mb-6">
+                  <Icon name="Users" size={48} className="text-white" />
+                  <h3 className="text-3xl lg:text-4xl font-bold text-white">
+                    Как это работает?
+                  </h3>
+                </div>
+                
+                <div className="grid md:grid-cols-3 gap-6 mb-8">
+                  <div className="bg-white/20 backdrop-blur-sm rounded-xl p-6 text-white">
+                    <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
+                      <span className="text-2xl font-bold text-purple-700">1</span>
+                    </div>
+                    <h4 className="font-bold text-xl mb-2">Получите ссылку</h4>
+                    <p className="text-white/90">Напишите нам, получите уникальную реферальную ссылку</p>
+                  </div>
+                  
+                  <div className="bg-white/20 backdrop-blur-sm rounded-xl p-6 text-white">
+                    <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
+                      <span className="text-2xl font-bold text-purple-700">2</span>
+                    </div>
+                    <h4 className="font-bold text-xl mb-2">Делитесь с друзьями</h4>
+                    <p className="text-white/90">Рассказывайте о нас знакомым селлерам и предпринимателям</p>
+                  </div>
+                  
+                  <div className="bg-white/20 backdrop-blur-sm rounded-xl p-6 text-white">
+                    <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
+                      <span className="text-2xl font-bold text-purple-700">3</span>
+                    </div>
+                    <h4 className="font-bold text-xl mb-2">Получайте доход</h4>
+                    <p className="text-white/90">Зарабатывайте с каждого заказа вашего реферала</p>
+                  </div>
+                </div>
+
+                <Button
+                  size="lg"
+                  className="bg-white text-purple-700 hover:bg-purple-50 px-12 py-6 text-xl font-bold shadow-lg"
+                  onClick={() => window.open("https://t.me/cupozon_mp", "_blank")}
+                >
+                  <Icon name="Rocket" size={28} className="mr-3" />
+                  Начать зарабатывать
+                </Button>
+                <p className="text-white/90 mt-4 text-lg">
+                  Присоединяйтесь к программе прямо сейчас — это бесплатно!
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
       {/* Contact Form Section */}
       <section
         id="contact-form"
