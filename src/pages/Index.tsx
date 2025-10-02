@@ -273,9 +273,20 @@ const Index = () => {
                   с гарантией защиты от штрафов
                 </span>
               </h1>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Увеличьте продажи и рейтинг товаров без риска блокировки
-              </p>
+              <div className="space-y-3 mb-8">
+                <p className="text-lg text-gray-600 flex items-start">
+                  <Icon name="Check" className="text-green-500 mr-3 mt-1 flex-shrink-0" size={20} />
+                  <span>Более 10000 реальных аккаунтов с ПВЗ</span>
+                </p>
+                <p className="text-lg text-gray-600 flex items-start">
+                  <Icon name="Check" className="text-green-500 mr-3 mt-1 flex-shrink-0" size={20} />
+                  <span>Полная имитация поведения живых покупателей</span>
+                </p>
+                <p className="text-lg text-gray-600 flex items-start">
+                  <Icon name="Check" className="text-green-500 mr-3 mt-1 flex-shrink-0" size={20} />
+                  <span>Уникальные методы оплаты для каждого выкупа</span>
+                </p>
+              </div>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   size="lg"
